@@ -1,0 +1,70 @@
+marc_map('001','identifier\.ppn')
+do marc_each()
+  if marc_match('LDR/7','b')
+    marc_map('LDR/7','type')
+  end
+end
+do marc_each()
+  if marc_match('LDR/7','m')
+    marc_map('LDR/7','type')
+  end
+end
+do marc_each()
+  if marc_match('LDR/19','c')
+    marc_map('LDR/19','type')
+  end
+end
+marc_map('008/07-10','date\.issued')
+marc_map('245an','title', join:' ; ')
+marc_map('246[1]a','title\.alternative')
+marc_map('020a','identifier\.isbn')
+# Wenn Person in Feld 100 == Author, wird sie in Spalte "contributor.author" geschrieben
+do marc_each()
+  if marc_match('1004','aut')
+    marc_map('100a','contributor\.author')
+  end
+end
+# Wenn Person in Feld 700 == Editor, wird sie in Spalte "editor" geschrieben
+# Mehrere Namen werden mit "|" voneinander getrennt
+do marc_each()
+  if marc_match('7004','edt')
+    marc_map('700a','editor.$append')
+  end
+end
+join_field(editor,'|')
+# DOI, URN, Handle sind in einer Spalte "identifier.pi" enthalten
+# Mehrere DOI, URN, Handle werden mit "|" voneinander getrennt
+marc_map('024[7]a','identifier\.pi', join:'|')
+# Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
+do marc_each()
+  if marc_match('856[42]y','Terms of use')
+    marc_map('856[42]u','rights')
+  end
+end
+# Verlagsort und Verlagsname kommen mit " : " getrennt in die Spalte "publisher"
+marc_map('264ab','publisher', join:' : ')
+# Angaben zur Sprache kommen mit "|" getrennt in die Spalte "language.iso"
+marc_map('041a','language\.iso', join:'|')
+# DDC-Notationen kommen mit "|" getrennt in die Spalte "subject.ddc"
+marc_map('082a','subject.\ddc', join:'|')
+# Wenn die Nummer in 084 ein JEL-Code ist, kommt er in Spalte "subject.jel"
+# Mehrere Codes werden mit "|" voneinander getrennt
+# !!!Zur Zeit werden über die KXP-Schnittstelle nicht alle Codes ausgegeben!!!
+do marc_each()
+  if marc_match('0842','JEL')
+    marc_map('084a','subject\.jel', join:'|')
+  end
+end
+# Veröffentlichungsangabe kommt in Spalte "description.abstract"
+marc_map('520a','description\.abstract')
+# Veröffentlichungsangabe kommt in Spalte "description.version"
+marc_map('250a','description\.version')
+marc_map('950[1]a','subject\.keyword', join:'|')
+#marc_map('490[1]av','relation\.ispartofseries',join: ' ; ')
+#if marc_any_match('810w',"DE-627")
+#  marc_map('810w','ispartofseries',join: '|')
+#end
+marc_map('810w','ispartofseries',join: '|')
+marc_map('856[40]u','url',join: '|')
+remove_field('_id')
+remove_field('record')
