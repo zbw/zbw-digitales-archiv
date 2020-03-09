@@ -50,6 +50,7 @@ end
 marc_map('520a','description\.abstract')
 # Veröffentlichungsangabe kommt in Spalte "description.version"
 marc_map('250a','description\.version')
+# Mehrere Keywords werden mit "|" voneinander getrennt
 marc_map('950[1]a','subject\.keyword', join:'|')
 #marc_map('490[1]av','relation\.ispartofseries',join: ' ; ')
 #if marc_any_match('810w',"DE-627")
