@@ -15,23 +15,14 @@ do marc_each()
   end
 end
 marc_map('008/07-10','date\.issued')
-marc_map('245an','title', join:' ; ')
+marc_map('245ab','title', join:' : ')
+marc_map('245np','part', join:' ; ')
 marc_map('246[1]a','title\.alternative')
 marc_map('020a','identifier\.isbn')
-# Wenn Person in Feld 100 == Author, wird sie in Spalte "contributor.author" geschrieben
-do marc_each()
-  if marc_match('1004','aut')
-    marc_map('100a','contributor\.author')
-  end
-end
-# Wenn Person in Feld 700 == Editor, wird sie in Spalte "editor" geschrieben
-# Mehrere Namen werden mit "|" voneinander getrennt
-do marc_each()
-  if marc_match('7004','edt')
-    marc_map('700a','editor.$append')
-  end
-end
-join_field(editor,'|')
+# Keine Prüfung auf Beziehungskennzeichnung für Feld 100 und 700
+# Keine Unterscheidung zwischen author und editor
+marc_map('100a','contributor\.primary')
+marc_map('700a','contributor\.other',join: '|')
 # DOI, URN, Handle sind in einer Spalte "identifier.pi" enthalten
 # Mehrere DOI, URN, Handle werden mit "|" voneinander getrennt
 marc_map('024[7]a','identifier\.pi', join:'|')
@@ -59,12 +50,15 @@ end
 marc_map('520a','description\.abstract')
 # Veröffentlichungsangabe kommt in Spalte "description.version"
 marc_map('250a','description\.version')
+# Mehrere Keywords werden mit "|" voneinander getrennt
 marc_map('950[1]a','subject\.keyword', join:'|')
-#marc_map('490[1]av','relation\.ispartofseries',join: ' ; ')
-#if marc_any_match('810w',"DE-627")
-#  marc_map('810w','ispartofseries',join: '|')
-#end
-marc_map('810w','ispartofseries',join: '|')
+marc_map('490[1]a','relation\.seriesstring',join: '. ')
+marc_map('490[1]v','relation\.seriesstringvol',join: '. ')
+if marc_match('810w','DE-627')
+  marc_map('810w','relation\.ispartofseries',join:'|')
+end
+marc_map('773w','relation\.ispartof',join:'|')
+marc_map('773t','relation\.journalstring')
 marc_map('856[40]u','url',join: '|')
 remove_field('_id')
 remove_field('record')

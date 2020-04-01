@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691948535</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309170824.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691948535</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691948535</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hjalmarsson, Randi</subfield>
+    <subfield code="d">1976-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)133067351</subfield>
+    <subfield code="0">(DE-627)533319099</subfield>
+    <subfield code="0">(DE-576)299601250</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The impact of abortion on crime and crime-related behavior</subfield>
+    <subfield code="c">Randi Hjalmarsson, Andreea Mitrut and Cristian Pop-Eleches</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">14 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 35 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Labour economics and public economics</subfield>
+    <subfield code="v">DP13800</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Mitrut, Andreea</subfield>
+    <subfield code="d">1977-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)136368425</subfield>
+    <subfield code="0">(DE-627)581105753</subfield>
+    <subfield code="0">(DE-576)28200565X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pop-Eleches, Christian</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)128735260</subfield>
+    <subfield code="0">(DE-627)378684183</subfield>
+    <subfield code="0">(DE-576)297305298</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13800</subfield>
+    <subfield code="9">13800</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13800</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13800</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605464009</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">Abortion</subfield>
+    <subfield code="a">crime</subfield>
+    <subfield code="a">Risky behavior</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691948306</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309170358.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691948306</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691948306</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Sampson, Thomas</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1155271262</subfield>
+    <subfield code="0">(DE-627)1016595999</subfield>
+    <subfield code="0">(DE-576)501520015</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Technology gaps, trade and income</subfield>
+    <subfield code="c">Thomas Sampson</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">14 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 73 Seiten)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">International trade and regional economics and macroeconomics and growth</subfield>
+    <subfield code="v">DP13799</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13799</subfield>
+    <subfield code="9">13799</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13799</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13799</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605463630</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">Technology gaps</subfield>
+    <subfield code="a">Trade</subfield>
+    <subfield code="a">Technology investment</subfield>
+    <subfield code="a">Ricardian comparative advantage</subfield>
+    <subfield code="a">International wage inequality</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691948039</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309165948.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691948039</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691948039</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Born, Benjamin</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)144012456</subfield>
+    <subfield code="0">(DE-627)656270276</subfield>
+    <subfield code="0">(DE-576)340325984</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Stable genius?</subfield>
+    <subfield code="b">the macroeconomic impact of Trump</subfield>
+    <subfield code="c">Benjamin Born, Gernot Müller, Moritz Schularick and Petr Sedlacek</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">13 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 15 Seiten)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Monetary economics and fluctuations</subfield>
+    <subfield code="v">DP13798</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Müller, Gernot J.</subfield>
+    <subfield code="d">1975-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)128912340</subfield>
+    <subfield code="0">(DE-627)56908685X</subfield>
+    <subfield code="0">(DE-576)297396099</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schularick, Moritz</subfield>
+    <subfield code="d">1975-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)131841580</subfield>
+    <subfield code="0">(DE-627)515953652</subfield>
+    <subfield code="0">(DE-576)251131009</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Sedlácek, Petr</subfield>
+    <subfield code="d">1982-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)112676423X</subfield>
+    <subfield code="0">(DE-627)881353833</subfield>
+    <subfield code="0">(DE-576)484779974</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13798</subfield>
+    <subfield code="9">13798</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13798</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13798</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605463045</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">President Trump</subfield>
+    <subfield code="a">macroeconomic performance</subfield>
+    <subfield code="a">economic growth</subfield>
+    <subfield code="a">stable genius</subfield>
+    <subfield code="a">counterfactual</subfield>
+    <subfield code="a">synthetic control method</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">169194775X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309165245.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)169194775X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP169194775X</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hsieh, Chang-tai</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)124771807</subfield>
+    <subfield code="0">(DE-627)365935573</subfield>
+    <subfield code="0">(DE-576)294493654</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The industrial revolution in services</subfield>
+    <subfield code="c">Chang-Tai Hsieh and Esteban Rossi-Hansberg</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">13 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 50 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">International trade and regional economics and macroeconomics and growth</subfield>
+    <subfield code="v">DP13797</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Rossi-Hansberg, Esteban</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)130453269</subfield>
+    <subfield code="0">(DE-627)501845518</subfield>
+    <subfield code="0">(DE-576)186096585</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13797</subfield>
+    <subfield code="9">13797</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13797</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13797</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605461344</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691946656</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309164207.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691946656</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691946656</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Huo, Zhen</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)139208399</subfield>
+    <subfield code="0">(DE-627)60870802X</subfield>
+    <subfield code="0">(DE-576)310730309</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">International comovement in the global production network</subfield>
+    <subfield code="c">Zhen Huo, Andrei A. Levchenko and Nitya Pandalai-Nayar</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">13 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 75 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">International macroeconomics and finance</subfield>
+    <subfield code="a">Monetary economics and fluctuations</subfield>
+    <subfield code="v">DP13796</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Levchenko, Andrei A.</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1135155089</subfield>
+    <subfield code="0">(DE-627)89012065X</subfield>
+    <subfield code="0">(DE-576)489656218</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pandalai-Nayar, Nitya</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13796</subfield>
+    <subfield code="9">13796</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13796</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13796</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605459455</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">production networks</subfield>
+    <subfield code="a"> international comovement</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691946184</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309163725.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691946184</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691946184</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Jensen, Henrik</subfield>
+    <subfield code="d">1947-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1024008576</subfield>
+    <subfield code="0">(DE-627)719044030</subfield>
+    <subfield code="0">(DE-576)367827131</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Kinks and gains from credit cycles</subfield>
+    <subfield code="c">Henrik Jensen, Søren Hove Ravn and Emiliano Santoro</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">13 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 27 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Monetary economics and fluctuations</subfield>
+    <subfield code="v">DP13795</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ravn, Søren Hove</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1015942067</subfield>
+    <subfield code="0">(DE-627)669537780</subfield>
+    <subfield code="0">(DE-576)351308172</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Santoro, Emiliano</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13795</subfield>
+    <subfield code="9">13795</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13795</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13795</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605458645</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">Cost of business cycles</subfield>
+    <subfield code="a">collateral constraints</subfield>
+    <subfield code="a">precautionary saving</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691945897</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309163321.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691945897</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691945897</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Scur, Daniela</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The ties that bind</subfield>
+    <subfield code="b">implicit contracts and management practices in family-run firms</subfield>
+    <subfield code="c">Daniela Scur and Renata Lemos</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">12 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 82 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Macroeconomics and growth</subfield>
+    <subfield code="v">DP13794</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Lemos, Renata</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13794</subfield>
+    <subfield code="9">13794</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13794</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13794</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605458068</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691945560</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309162914.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691945560</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691945560</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Anderson, Simon P.</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)121973271</subfield>
+    <subfield code="0">(DE-627)392605880</subfield>
+    <subfield code="0">(DE-576)293025460</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Price discrimination in the information age</subfield>
+    <subfield code="b">prices, poaching, and privacy with personalized targeted discounts</subfield>
+    <subfield code="c">Simon P Anderson, Alicia Baik and Nathan Larson</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">12 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 97 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Industrial organization</subfield>
+    <subfield code="v">DP13793</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Baik, Alicia</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Larson, Nathan</subfield>
+    <subfield code="d">1974-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1080207538</subfield>
+    <subfield code="0">(DE-627)843978198</subfield>
+    <subfield code="0">(DE-576)453405266</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13793</subfield>
+    <subfield code="9">13793</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13793</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13793</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605457428</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">targeted advertising</subfield>
+    <subfield code="a">competitive price discrimination</subfield>
+    <subfield code="a">discounting</subfield>
+    <subfield code="a">privacy</subfield>
+    <subfield code="a">GDPR</subfield>
+    <subfield code="a">opt-in</subfield>
+    <subfield code="a">growth</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691945277</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309162511.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691945277</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691945277</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Espinoza, Raphael</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1045598747</subfield>
+    <subfield code="0">(DE-627)774641371</subfield>
+    <subfield code="0">(DE-576)399096949</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="4">
+    <subfield code="a">The armistice of the sexes</subfield>
+    <subfield code="b">gender complementarities in the production function</subfield>
+    <subfield code="c">Raphael Espinoza, Jonathan D. Ostry and Chris Papageorgiou</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">12 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 40 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">International macroeconomics and finance and macroeconomics and growth</subfield>
+    <subfield code="v">DP13792</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Ostry, Jonathan David</subfield>
+    <subfield code="d">1962-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)133068471</subfield>
+    <subfield code="0">(DE-627)533319951</subfield>
+    <subfield code="0">(DE-576)167213482</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Papageorgiou, Chris</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)171843592</subfield>
+    <subfield code="0">(DE-627)315204486</subfield>
+    <subfield code="0">(DE-576)355655160</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13792</subfield>
+    <subfield code="9">13792</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13792</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13792</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605456642</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">Female labor force participation</subfield>
+    <subfield code="a">aggregate production function</subfield>
+    <subfield code="a">elasticity of substitution</subfield>
+    <subfield code="a">growth</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691935816</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309151318.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691935816</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691935816</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Nyborg, Kjell G.</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)124097111</subfield>
+    <subfield code="0">(DE-627)503361917</subfield>
+    <subfield code="0">(DE-576)172192382</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Corporate cash holdings</subfield>
+    <subfield code="b">stock liquidity and the repurchase motive</subfield>
+    <subfield code="c">Kjell G Nyborg and Zexi Wang</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">12 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 60 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Financial economics</subfield>
+    <subfield code="v">DP13791</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Wang, Zexi</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1055924981</subfield>
+    <subfield code="0">(DE-627)792850394</subfield>
+    <subfield code="0">(DE-576)41193998X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13791</subfield>
+    <subfield code="9">13791</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13791</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13791</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605403891</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">Corporate cash holdings</subfield>
+    <subfield code="a">Stock liquidity</subfield>
+    <subfield code="a">Repurchases</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691934984</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309150914.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691934984</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691934984</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Bohren, J. Aislinn</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1055912681</subfield>
+    <subfield code="0">(DE-627)792795563</subfield>
+    <subfield code="0">(DE-576)411927981</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Inaccurate statistical discrimination</subfield>
+    <subfield code="c">Aislinn Bohren, Kareem Haggag, Alex Imas and Devin G. Pope</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">10 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 63 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Industrial organization and labour economics</subfield>
+    <subfield code="v">DP13790</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Haggag, Kareem</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)118052960X</subfield>
+    <subfield code="0">(DE-627)1067757465</subfield>
+    <subfield code="0">(DE-576)52020140X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Imas, Alex</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Pope, Devin G.</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13790</subfield>
+    <subfield code="9">13790</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13790</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13790</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605402291</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">discrimination</subfield>
+    <subfield code="a">Inaccurate Beliefs</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691928925</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309143153.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691928925</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691928925</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Card, David E.</subfield>
+    <subfield code="d">1956-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)124526586</subfield>
+    <subfield code="0">(DE-627)363397639</subfield>
+    <subfield code="0">(DE-576)16404955X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Are referees and editors in economics gender neutral?</subfield>
+    <subfield code="c">David Card, Stefano DellaVigna, Patricia Funk and Nagore Iriberri</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">10 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 75 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Labour economics</subfield>
+    <subfield code="v">DP13789</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Della Vigna, Stefano</subfield>
+    <subfield code="d">1973-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)129696129</subfield>
+    <subfield code="0">(DE-627)477590187</subfield>
+    <subfield code="0">(DE-576)297790587</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Funk, Patricia</subfield>
+    <subfield code="d">1971-</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)123626811</subfield>
+    <subfield code="0">(DE-627)08266983X</subfield>
+    <subfield code="0">(DE-576)293796726</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Iriberri, Nagore</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)133860787</subfield>
+    <subfield code="0">(DE-627)557221730</subfield>
+    <subfield code="0">(DE-576)300153899</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13789</subfield>
+    <subfield code="9">13789</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13789</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13789</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">360538983X</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691928283</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309142655.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691928283</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691928283</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Appel, Ian</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Active short selling by hedge funds</subfield>
+    <subfield code="c">Ian Appel, Jordan Bulka and Vyacheslav Fos</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">09 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 56 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Financial economics</subfield>
+    <subfield code="v">DP13788</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Bulka, Jordan</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Fos, Vyacheslav</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13788</subfield>
+    <subfield code="9">13788</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13788</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13788</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605388280</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     nam a22        4500</leader>
+  <controlfield tag="001">1691927821</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20200309142305.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">200309s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1691927821</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1691927821</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-GB</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Rampini, Adriano A.</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Risk management in financial institutions</subfield>
+    <subfield code="c">Adriano A. Rampini, S. Viswanathan and Guillaume Vuillemey</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">London</subfield>
+    <subfield code="b">Centre for Economic Policy Research</subfield>
+    <subfield code="c">09 June 2019</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 69 Seiten)</subfield>
+    <subfield code="b">Illustrationen</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">Discussion paper series / Centre for Economic Policy Research</subfield>
+    <subfield code="a">Financial economics and monetary economics and fluctuations</subfield>
+    <subfield code="v">DP13787</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Viswanathan, S.</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)170960323</subfield>
+    <subfield code="0">(DE-627)061112437</subfield>
+    <subfield code="0">(DE-576)131795066</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Vuillemey, Guillaume</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1117156613</subfield>
+    <subfield code="0">(DE-627)871277646</subfield>
+    <subfield code="0">(DE-576)478798083</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="810" ind1="2" ind2=" ">
+    <subfield code="a">Centre for Economic Policy Research</subfield>
+    <subfield code="t">Discussion papers</subfield>
+    <subfield code="v">DP13787</subfield>
+    <subfield code="9">13787</subfield>
+    <subfield code="w">(DE-627)32040868X</subfield>
+    <subfield code="w">(DE-576)095551840</subfield>
+    <subfield code="w">(DE-600)2001019-9</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/download.php?dpno=13787</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://cepr.org/active/publications/discussion_papers/dp.php?dpno=13787</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">Lizenzpflichtig</subfield>
+  </datafield>
+  <datafield tag="912" ind1=" " ind2=" ">
+    <subfield code="a">ZDB-1-CEP</subfield>
+  </datafield>
+  <datafield tag="924" ind1="1" ind2=" ">
+    <subfield code="a">3605387160</subfield>
+    <subfield code="b">DE-206</subfield>
+    <subfield code="9">206</subfield>
+    <subfield code="c">GBV</subfield>
+    <subfield code="d">d</subfield>
+    <subfield code="g">LZ 161</subfield>
+    <subfield code="h">K:</subfield>
+  </datafield>
+  <datafield tag="950" ind1="l" ind2=" ">
+    <subfield code="a">Risk management</subfield>
+    <subfield code="a">financial institutions</subfield>
+    <subfield code="a">interest rate risk</subfield>
+    <subfield code="a">Foreign exchange risk</subfield>
+    <subfield code="a">Financial constraints</subfield>
+    <subfield code="a">Derivatives</subfield>
+    <subfield code="2">26</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+</record>
