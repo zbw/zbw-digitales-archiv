@@ -1,6 +1,6 @@
 # ZBW - digital archive data fetcher and converter
 
-This program downloads data from the K10Plus union catalogue and performs a conversion to a proprierary CSV schema.
+This program downloads data from the K10Plus union catalogue and performs a conversion to a proprietary CSV schema.
 
 ## Getting started and prerequisites
 
