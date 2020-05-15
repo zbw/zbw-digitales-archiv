@@ -9,7 +9,7 @@ echo "Bitte warten. Datensätze werden heruntergeladen."
 
 cat $1 | xargs -n 1 -i curl -sS "http://unapi.k10plus.de/?id=gvk7:ppn:{}&format=marcxml" > records.xml
 
-echo "Bitte warten. Heruntergeladene Datensätze werde konvertiert."
+echo "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
 catmandu convert MARC --type XML to CSV --fix marc2csv.fix --fields identifier.ppn,type,date.issued,title,part,\
 title.alternative,identifier.isbn,contributor.primary,contributor.other,identifier.pi,rights,publisher,\
