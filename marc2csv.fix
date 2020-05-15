@@ -1,3 +1,4 @@
+# Mappingregeln stehen in dieser Datei!
 marc_map('001','identifier\.ppn')
 do marc_each()
   if marc_match('LDR/7','b')
@@ -14,29 +15,16 @@ do marc_each()
     marc_map('LDR/19','type')
   end
 end
+# Erscheinungsjahr
 marc_map('008/07-10','date\.issued')
-marc_map('245ab','title', join:' : ')
-marc_map('245np','part', join:' ; ')
-marc_map('246[1]a','title\.alternative')
+# ISBN
 marc_map('020a','identifier\.isbn')
-# Keine Prüfung auf Beziehungskennzeichnung für Feld 100 und 700
-# Keine Unterscheidung zwischen author und editor
-marc_map('100a','contributor\.primary')
-marc_map('700a','contributor\.other',join: '|')
-# DOI, URN, Handle sind in einer Spalte "identifier.pi" enthalten
+# DOI, URN, Handle sind in einer gemeinsamen Spalte enthalten
 # Mehrere DOI, URN, Handle werden mit "|" voneinander getrennt
-marc_map('024[7]a','identifier\.pi', join:'|')
-# Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
-do marc_each()
-  if marc_match('856[42]y','Terms of use')
-    marc_map('856[42]u','rights')
-  end
-end
-# Verlagsort und Verlagsname kommen mit " : " getrennt in die Spalte "publisher"
-marc_map('264ab','publisher', join:' : ')
-# Angaben zur Sprache kommen mit "|" getrennt in die Spalte "language.iso"
+marc_map('024[7]a','identifier\.pi',join:'|')
+# Angaben zur Sprache mit "|" getrennt
 marc_map('041a','language\.iso', join:'|')
-# DDC-Notationen kommen mit "|" getrennt in die Spalte "subject.ddc"
+# DDC-Notationen mit "|" getrennt
 marc_map('082a','subject.\ddc', join:'|')
 # Wenn die Nummer in 084 ein JEL-Code ist, kommt er in Spalte "subject.jel"
 # Mehrere Codes werden mit "|" voneinander getrennt
@@ -46,20 +34,37 @@ do marc_each()
     marc_map('084a','subject\.jel', join:'|')
   end
 end
-# Veröffentlichungsangabe kommt in Spalte "description.abstract"
-marc_map('520a','description\.abstract')
-# Veröffentlichungsangabe kommt in Spalte "description.version"
+# Keine Prüfung auf Beziehungskennzeichnung für Feld 100
+# Keine Unterscheidung zwischen author und editor
+marc_map('100a','contributor\.primary')
+# Titel
+marc_map('245ab','title',join:' : ')
+# Zählung zum Titel
+marc_map('245np','part',join:' ; ')
+# Titelvariante
+marc_map('246[1]a','title\.alternative')
+# Verlagsort und Verlagsname mit " : " getrennt
+marc_map('264ab','publisher', join:' : ')
+# Veröffentlichungsangabe
 marc_map('250a','description\.version')
-# Mehrere Keywords werden mit "|" voneinander getrennt
-marc_map('950[1]a','subject\.keyword', join:'|')
-#marc_map('490[1]av','relation\.ispartofseries',join: ' ; ')
-#if marc_any_match('810w',"DE-627")
-#  marc_map('810w','ispartofseries',join: '|')
-#end
-if marc_match('810w','DE-627')
-  marc_map('810w','relation\.ispartofseries',join:'|')
-end
+# Serienangabe
+marc_map('490a','relation\.ispartofseries',join:'. ')
+# Abstract
+marc_map('520a','description\.abstract')
+# Keine Prüfung auf Beziehungskennzeichnung für Feld 700
+# Keine Unterscheidung zwischen author und editor
+marc_map('700a','contributor\.other',join: '|')
+# Zeitschriftenangabe
 marc_map('773w','relation\.ispartof',join:'|')
+# Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
+do marc_each()
+  if marc_match('856[42]y','Terms of use')
+    marc_map('856[42]u','rights')
+  end
+end
+# URL
 marc_map('856[40]u','url',join: '|')
+# Keywords mit "|" voneinander getrennt
+marc_map('950[1]a','subject\.keyword', join:'|')
 remove_field('_id')
 remove_field('record')
