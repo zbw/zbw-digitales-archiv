@@ -1,13 +1,18 @@
 #!/bin/bash
 
+display_usage() {
+    echo -e "Das Programm erwartet die Angabe eines Dateinamens als Parameter:\n$ bash get.sh <Dateiname>"
+}
+
 if [[ $# -eq 0 ]] ; then
-    echo 'No arguments supplied!'
+    echo "Kein Dateiname angegeben."
+    display_usage
     exit 1
 fi
 
 echo "Bitte warten. Datensätze werden heruntergeladen."
 
-cat $1 | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=gvk7:ppn:{}&format=marcxml" > records.xml
+cat $1 | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=k10plus:ppn:{}&format=marcxml" > records.xml
 
 if [[ -s records.xml ]]
 then 
@@ -20,11 +25,11 @@ fi
 echo "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
 catmandu convert MARC --type XML to CSV --fix marc2csv.fix --fields identifier.ppn,type,date.issued,title,part,\
-title.alternative,identifier.isbn,contributor.primary,contributor.other,identifier.pi,rights,publisher,\
-language.iso,subject.ddc,subject.jel,description.version,subject.keyword,relation.ispartofseries,relation.ispartof,\
-url,description.abstract --sep_char '\t' < records.xml > records.csv
+title.alternative,identifier.isbn,contributor.author,contributor.other,identifier.pi,rights,publisher,\
+language.iso,subject.jel,description.version,seriesname,relation.ispartofseries,\
+journalname,relation.ispartof,identifier.url,description.abstract --sep_char '\t' < records.xml > records-$1.csv
 
-if [[ -s records.csv ]]
+if [[ -s records-$1.csv ]]
 then 
     echo "Konvertierung erfolgreich.";
 else
@@ -32,6 +37,7 @@ else
     exit 1
 fi
 
-mv ppns-*.txt data/archive/ppns
+mv ppns-*.txt archive/ppns
+mv records-* archive/records
 
 rm records.xml

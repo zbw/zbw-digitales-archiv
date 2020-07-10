@@ -1,4 +1,6 @@
-# Mappingregeln stehen in dieser Datei!
+# Mappingregeln für K10Plus2DigitalesArchiv!
+# @author: Felix Hemme
+# @version: 2020-07-08 v1.0
 marc_map('001','identifier\.ppn')
 do marc_each()
   if marc_match('LDR/7','b')
@@ -24,8 +26,6 @@ marc_map('020a','identifier\.isbn')
 marc_map('024[7]a','identifier\.pi',join:'|')
 # Angaben zur Sprache mit "|" getrennt
 marc_map('041a','language\.iso', join:'|')
-# DDC-Notationen mit "|" getrennt
-marc_map('082a','subject.\ddc', join:'|')
 # Wenn die Nummer in 084 ein JEL-Code ist, kommt er in Spalte "subject.jel"
 # Mehrere Codes werden mit "|" voneinander getrennt
 # !!!Zur Zeit werden über die KXP-Schnittstelle nicht alle Codes ausgegeben!!!
@@ -36,7 +36,7 @@ do marc_each()
 end
 # Keine Prüfung auf Beziehungskennzeichnung für Feld 100
 # Keine Unterscheidung zwischen author und editor
-marc_map('100a','contributor\.primary')
+marc_map('100a','contributor\.author')
 # Titel
 marc_map('245ab','title',join:' : ')
 # Zählung zum Titel
@@ -47,15 +47,19 @@ marc_map('246[1]a','title\.alternative')
 marc_map('264ab','publisher', join:' : ')
 # Veröffentlichungsangabe
 marc_map('250a','description\.version')
-# Serienangabe
-marc_map('490a','relation\.ispartofseries',join:'. ')
+# Reihen-Name
+marc_map('490a','seriesname',join:'. ')
 # Abstract
 marc_map('520a','description\.abstract')
 # Keine Prüfung auf Beziehungskennzeichnung für Feld 700
 # Keine Unterscheidung zwischen author und editor
 marc_map('700a','contributor\.other',join: '|')
-# Zeitschriftenangabe
+# Zeitschriften-ID
 marc_map('773w','relation\.ispartof',join:'|')
+# Zeitschriften-Name
+marc_map('773t','journalname',join:'|')
+# Reihen-ID
+marc_map('810w','relation\.ispartofseries',join:'|')
 # Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
 do marc_each()
   if marc_match('856[42]y','Terms of use')
@@ -63,8 +67,6 @@ do marc_each()
   end
 end
 # URL
-marc_map('856[40]u','url',join: '|')
-# Keywords mit "|" voneinander getrennt
-marc_map('950[1]a','subject\.keyword', join:'|')
+marc_map('856[40]u','identifier\.url',join: '|')
 remove_field('_id')
 remove_field('record')
