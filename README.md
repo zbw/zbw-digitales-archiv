@@ -28,9 +28,9 @@ $ ./get.sh [filename]
 
 The records are now being downloaded and converted using Catmandu's ETL engine.
 
-The ppn file will be automatically moved to a distinct directory: data/archive/ppns
+The ppn file will be automatically moved to a distinct directory: archive/ppns
 
-A CSV file "records.csv" will be created that stores the converted records. The column separator is "\t".
+A CSV file "records-<filename>.csv" will be created that stores the converted records. The column separator is "\t". The file will be moved to archive/records. 
 
 If the mapping needs to be adjusted, it is as simple as editing the mapping file "marc2csv.fix". Use Catmandu's [fix language](https://github.com/LibreCat/Catmandu/wiki/Fix-language).
 
