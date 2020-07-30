@@ -15,25 +15,25 @@ echo "Bitte warten. Datensätze werden heruntergeladen."
 cat $1 | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=k10plus:ppn:{}&format=marcxml" > records.xml
 
 if [[ -s records.xml ]]
-then 
+then
     echo "Download erfolgreich.";
 else
-    echo "Download fehlgeschlagen, Programm bricht ab."; 
+    echo "Download fehlgeschlagen, Programm bricht ab.";
     exit 1
 fi
 
 echo "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
 catmandu convert MARC --type XML to CSV --fix marc2csv.fix --fields identifier.ppn,type,date.issued,title,part,\
-title.alternative,identifier.isbn,contributor.author,contributor.other,identifier.pi,rights,publisher,\
+title.alternative,identifier.isbn,contributor.primary,contributor.other,identifier.pi,rights,publisher,\
 language.iso,subject.jel,description.version,seriesname,relation.ispartofseries,\
 journalname,relation.ispartof,identifier.url,description.abstract --sep_char '\t' < records.xml > records-$1.csv
 
 if [[ -s records-$1.csv ]]
-then 
+then
     echo "Konvertierung erfolgreich.";
 else
-    echo "Konvertierung fehlgeschlagen, Programm bricht ab."; 
+    echo "Konvertierung fehlgeschlagen, Programm bricht ab.";
     exit 1
 fi
 

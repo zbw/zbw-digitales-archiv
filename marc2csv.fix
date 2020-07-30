@@ -36,7 +36,7 @@ do marc_each()
 end
 # Keine Prüfung auf Beziehungskennzeichnung für Feld 100
 # Keine Unterscheidung zwischen author und editor
-marc_map('100a','contributor\.author')
+marc_map('100a','contributor\.primary')
 # Titel
 marc_map('245ab','title',join:' : ')
 # Zählung zum Titel
