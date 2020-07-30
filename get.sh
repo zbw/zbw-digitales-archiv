@@ -27,7 +27,7 @@ echo "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 catmandu convert MARC --type XML to CSV --fix marc2csv.fix --fields identifier.ppn,type,date.issued,title,part,\
 title.alternative,identifier.isbn,contributor.primary,contributor.other,identifier.pi,rights,publisher,\
 language.iso,subject.jel,description.version,seriesname,relation.ispartofseries,\
-journalname,relation.ispartof,identifier.url,description.abstract --sep_char '\t' < records.xml > records-$1.csv
+journalname,relation.ispartof,url,description.abstract --sep_char '\t' < records.xml > records-$1.csv
 
 if [[ -s records-$1.csv ]]
 then

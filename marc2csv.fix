@@ -67,6 +67,6 @@ do marc_each()
   end
 end
 # URL
-marc_map('856[40]u','identifier\.url',join: '|')
+marc_map('856[40]u','url',join: '|')
 remove_field('_id')
 remove_field('record')
