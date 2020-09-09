@@ -10,9 +10,16 @@ if [[ $# -eq 0 ]] ; then
     exit 1
 fi
 
+file=$1
+fileUnix="${file}.unix.txt"
+
+echo $file
+
+awk '{ sub("\r$", ""); print }' < $1 > $fileUnix
+
 echo "Bitte warten. Datensätze werden heruntergeladen."
 
-cat $1 | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=k10plus:ppn:{}&format=marcxml" > records.xml
+cat $fileUnix | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=k10plus:ppn:{}&format=marcxml" > records.xml
 
 if [[ -s records.xml ]]
 then
@@ -37,7 +44,7 @@ else
     exit 1
 fi
 
-mv ppns-*.txt archive/ppns
+mv *.txt archive/ppns
 mv records-* archive/records
 
 rm records.xml
