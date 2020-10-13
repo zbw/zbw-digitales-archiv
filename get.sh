@@ -13,7 +13,7 @@ fi
 file=$1
 fileUnix="${file}.unix.txt"
 
-echo $file
+echo "Datei $file wird verarbeitet."
 
 awk '{ sub("\r$", ""); print }' < $1 > $fileUnix
 
