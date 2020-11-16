@@ -65,7 +65,7 @@ end
 if marc_has('830')
   marc_map('830w','relation\.ispartofseries',join:'|')
 end
-# Mappe Signaturen auf Fake-PPNs
+# Mappe Signaturen auf Lax-Satz-PPNs
 do marc_each()
   if marc_any_match('924g','ZSM 1')
     set_field('relation\.ispartofseries','(DE-627)1730492479')
@@ -79,6 +79,16 @@ end
 do marc_each()
   if marc_any_match('924g','ZSM 4')
     set_field('relation\.ispartofseries','(DE-627)1730499090')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 6')
+    set_field('relation\.ispartofseries','(DE-627)1735350516')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 7')
+    set_field('relation\.ispartofseries','(DE-627)1738745007')
   end
 end
 # Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
