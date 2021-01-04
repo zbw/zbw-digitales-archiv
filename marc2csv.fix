@@ -91,6 +91,76 @@ do marc_each()
     set_field('relation\.ispartofseries','(DE-627)1738745007')
   end
 end
+do marc_each()
+  if marc_any_match('924g','ZSM 8')
+    set_field('relation\.ispartofseries','(DE-627)1740221109')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 9')
+    set_field('relation\.ispartofseries','(DE-627)1740222571')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 10')
+    set_field('relation\.ispartofseries','(DE-627)1740223195')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 11')
+    set_field('relation\.ispartofseries','(DE-627)1740224299')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 12')
+    set_field('relation\.ispartofseries','(DE-627)1740225600')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 13')
+    set_field('relation\.ispartofseries','(DE-627)1740226062')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 14')
+    set_field('relation\.ispartofseries','(DE-627)1740227018')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 15')
+    set_field('relation\.ispartofseries','(DE-627)1740227549')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 16')
+    set_field('relation\.ispartofseries','(DE-627)1740229053')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 17')
+    set_field('relation\.ispartofseries','(DE-627)1740229983')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 18')
+    set_field('relation\.ispartofseries','(DE-627)1740230590')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 19')
+    set_field('relation\.ispartofseries','(DE-627)1740231120')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 20')
+    set_field('relation\.ispartofseries','(DE-627)1740231724')
+  end
+end
+do marc_each()
+  if marc_any_match('924g','ZSM 21')
+    set_field('relation\.ispartofseries','(DE-627)1740232453')
+  end
+end
 # Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
 do marc_each()
   if marc_match('856[42]y','Terms of use')
@@ -99,5 +169,9 @@ do marc_each()
 end
 # URL
 marc_map('856[40]u','url',join: '|')
+# DDC und Keywords sollten ins Elementeset aufgenommen werden, nachträglich wurde jedoch entschieden,
+# die Felder nicht zu belegen. Deshalb werden sie leer angelegt.
+set_field('subject\.ddc','')
+set_field('subject\.keyword','')
 remove_field('_id')
 remove_field('record')
