@@ -1,6 +1,6 @@
 # Mappingregeln für K10Plus2DigitalesArchiv!
 # @author: Felix Hemme
-# @version: 2020-07-08 v1.0
+# @version: 2021-02-03 v1.1
 marc_map('001','identifier\.ppn')
 do marc_each()
   if marc_match('LDR/7','b')
@@ -20,7 +20,8 @@ end
 # Erscheinungsjahr
 marc_map('008/07-10','date\.issued')
 # ISBN
-marc_map('020a','identifier\.isbn')
+# Mehrere ISBN werden mit "|" voneinander getrennt
+marc_map('020a','identifier\.isbn', join:'|')
 # DOI, URN, Handle sind in einer gemeinsamen Spalte enthalten
 # Mehrere DOI, URN, Handle werden mit "|" voneinander getrennt
 marc_map('024[7]a','identifier\.pi',join:'|')
