@@ -2,16 +2,19 @@
 # @author: Felix Hemme
 # @version: 2021-02-03 v1.1
 marc_map('001','identifier\.ppn')
+# Typ "Aufsatz"
 do marc_each()
   if marc_match('LDR/7','b')
     marc_map('LDR/7','type')
   end
 end
+# Typ "Buch"
 do marc_each()
   if marc_match('LDR/7','m')
     marc_map('LDR/7','type')
   end
 end
+# Typ "Band"
 do marc_each()
   if marc_match('LDR/19','c')
     marc_map('LDR/19','type')
