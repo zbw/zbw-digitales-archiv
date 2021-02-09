@@ -19,7 +19,12 @@ awk '{ sub("\r$", ""); print }' < $1 > $fileUnix
 
 echo "Bitte warten. Datensätze werden heruntergeladen."
 
-cat $fileUnix | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=k10plus:ppn:{}&format=marcxml" > records.xml
+# bisherige Schnittstelle und Format
+# cat $fileUnix | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=k10plus:ppn:{}&format=marcxml" > records.xml
+
+# neue Schnittstelle und Format
+cat $fileUnix | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=opac-de-206:ppn:{}&format=marcxml-solr" > records.xml
+
 
 if [[ -s records.xml ]]
 then
@@ -31,7 +36,7 @@ fi
 
 echo "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
-catmandu convert MARC --type XML to CSV --fix marc2csv.fix --fields identifier.ppn,type,date.issued,title,part,\
+catmandu convert MARC --type XML to CSV --fix marc2csv-solr.fix --fields identifier.ppn,type,date.issued,title,part,\
 title.alternative,identifier.isbn,contributor.primary,contributor.other,identifier.pi,rights,publisher,\
 language.iso,subject.jel,description.version,seriesname,relation.ispartofseries,\
 journalname,relation.ispartof,url,description.abstract,subject.ddc,subject.keyword --sep_char '\t' < records.xml > records-$1.csv

@@ -1,6 +1,6 @@
 # Mappingregeln für K10Plus2DigitalesArchiv!
 # @author: Felix Hemme
-# @version: 2021-02-03 v1.1
+# @version: 2021-02-09 v1.2
 marc_map('001','identifier\.ppn')
 # Typ "Aufsatz"
 do marc_each()
@@ -71,98 +71,110 @@ if marc_has('830')
 end
 # Mappe Signaturen auf Lax-Satz-PPNs
 do marc_each()
-  if marc_any_match('924g','ZSM 1')
+  if marc_any_match('980d','ZSM 1')
     set_field('relation\.ispartofseries','(DE-627)1730492479')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 3')
+  if marc_any_match('980d','ZSM 3')
     set_field('relation\.ispartofseries','(DE-627)1730497268')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 4')
+  if marc_any_match('980d','ZSM 4')
     set_field('relation\.ispartofseries','(DE-627)1730499090')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 6')
+  if marc_any_match('980d','ZSM 6')
     set_field('relation\.ispartofseries','(DE-627)1735350516')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 7')
+  if marc_any_match('980d','ZSM 7')
     set_field('relation\.ispartofseries','(DE-627)1738745007')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 8')
+  if marc_any_match('980d','ZSM 8')
     set_field('relation\.ispartofseries','(DE-627)1740221109')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 9')
+  if marc_any_match('980d','ZSM 9')
     set_field('relation\.ispartofseries','(DE-627)1740222571')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 10')
+  if marc_any_match('980d','ZSM 10')
     set_field('relation\.ispartofseries','(DE-627)1740223195')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 11')
+  if marc_any_match('980d','ZSM 11')
     set_field('relation\.ispartofseries','(DE-627)1740224299')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 12')
+  if marc_any_match('980d','ZSM 12')
     set_field('relation\.ispartofseries','(DE-627)1740225600')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 13')
+  if marc_any_match('980d','ZSM 13')
     set_field('relation\.ispartofseries','(DE-627)1740226062')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 14')
+  if marc_any_match('980d','ZSM 14')
     set_field('relation\.ispartofseries','(DE-627)1740227018')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 15')
+  if marc_any_match('980d','ZSM 15')
     set_field('relation\.ispartofseries','(DE-627)1740227549')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 16')
+  if marc_any_match('980d','ZSM 16')
     set_field('relation\.ispartofseries','(DE-627)1740229053')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 17')
+  if marc_any_match('980d','ZSM 17')
     set_field('relation\.ispartofseries','(DE-627)1740229983')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 18')
+  if marc_any_match('980d','ZSM 18')
     set_field('relation\.ispartofseries','(DE-627)1740230590')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 19')
+  if marc_any_match('980d','ZSM 19')
     set_field('relation\.ispartofseries','(DE-627)1740231120')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 20')
+  if marc_any_match('980d','ZSM 20')
     set_field('relation\.ispartofseries','(DE-627)1740231724')
   end
 end
 do marc_each()
-  if marc_any_match('924g','ZSM 21')
+  if marc_any_match('980d','ZSM 21')
     set_field('relation\.ispartofseries','(DE-627)1740232453')
+  end
+end
+# Alles mit dem Abrufzeichen DA:oas
+do marc_each()
+  if marc_any_match('980h','DA:oas')
+    set_field('relation\.ispartofseries','(DE-627)1735209643')
+  end
+end
+# Alles mit dem Abrufzeichen DA:ras
+do marc_each()
+  if marc_any_match('980h','DA:ras')
+    set_field('relation\.ispartofseries','(DE-627)1735209996')
   end
 end
 # Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
