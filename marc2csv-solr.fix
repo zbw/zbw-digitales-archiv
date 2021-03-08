@@ -2,12 +2,23 @@
 # @author: Felix Hemme
 # @version: 2021-02-09 v1.2
 marc_map('001','identifier\.ppn')
-# Typ "Aufsatz"
+# Typ "Aufsatz" aus Zeitschrift
 do marc_each()
-  if marc_match('LDR/7','b')
-    marc_map('LDR/7','type')
+  if marc_match('7737|||s','s')
+    set_field('type','b')
   end
 end
+# Typ "Aufsatz" aus Monografie
+do marc_each()
+  if marc_match('7737|||m','m')
+    set_field('type','b')
+  end
+end
+#do marc_each()
+#  if marc_match('LDR/7','b')
+#    marc_map('LDR/7','type')
+#  end
+#end
 # Typ "Buch"
 do marc_each()
   if marc_match('LDR/7','m')
