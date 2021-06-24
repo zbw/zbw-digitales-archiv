@@ -176,6 +176,11 @@ do marc_each()
     set_field('relation\.ispartofseries','(DE-627)1740232453')
   end
 end
+do marc_each()
+  if marc_any_match('980d','ZSM 22')
+    set_field('relation\.ispartofseries','(DE-627)176098941X')
+  end
+end
 # Alles mit dem Abrufzeichen DA:oas
 do marc_each()
   if marc_any_match('980h','DA:oas')
