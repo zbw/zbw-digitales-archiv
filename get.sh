@@ -49,7 +49,13 @@ else
     exit 1
 fi
 
+ppnDir="archive/ppns"
+dataDir="archive/data"
+
+[ ! -d "$ppnDir" ] && mkdir -p "$ppnDir"
+[ ! -d "$dataDir" ] && mkdir -p "$dataDir"
+
 mv *.txt archive/ppns
-mv records-* archive/records
+mv records-* archive/data
 
 rm records.xml
