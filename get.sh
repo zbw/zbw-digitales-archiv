@@ -19,12 +19,8 @@ awk '{ sub("\r$", ""); print }' < $1 > $fileUnix
 
 echo "Bitte warten. Datensätze werden heruntergeladen."
 
-# bisherige Schnittstelle und Format
-# cat $fileUnix | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=k10plus:ppn:{}&format=marcxml" > records.xml
-
-# neue Schnittstelle und Format
-cat $fileUnix | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=opac-de-206:ppn:{}&format=marcxml-solr" > records.xml
-
+# Schnittstelleninformationen
+cat $fileUnix | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=owc-de-206:ppn:{}&format=marcxml-solr" > records.xml
 
 if [[ -s records.xml ]]
 then
