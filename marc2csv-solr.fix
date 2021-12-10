@@ -39,6 +39,22 @@ marc_map('020a','identifier\.isbn', join:'|')
 # DOI, URN, Handle sind in einer gemeinsamen Spalte enthalten
 # Mehrere DOI, URN, Handle werden mit "|" voneinander getrennt
 marc_map('024[7]a','identifier\.pi',join:'|')
+# <!-- MÖGLICHE ZUKÜNFTIGE IMPLEMENTIERUGN ANFANG -->
+do marc_each()
+  if marc_match('024[7]2','doi')
+    marc_map('024[7]a','identifier\.pi',join:'|')
+	prepend('identifier\.pi','doi: ')
+  end
+  if marc_match('024[7]2','hdl')
+    marc_map('024[7]a','identifier\.pi',join:'|')
+	prepend('identifier\.pi','hdl: ')
+  end
+  if marc_match('024[7]2','urn')
+    marc_map('024[7]a','identifier\.pi',join:'|')
+	prepend('identifier\.pi','urn: ')
+  end
+end
+# <!-- MÖGLICHE ZUKÜNFTIGE IMPLEMENTIERUGN ENDE -->
 # Angaben zur Sprache mit "|" getrennt
 marc_map('041a','language\.iso', join:'|')
 # Wenn die Nummer in 084 ein JEL-Code ist, kommt er in Spalte "subject.jel"
