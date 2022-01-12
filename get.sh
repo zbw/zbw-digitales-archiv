@@ -46,10 +46,10 @@ else
 fi
 
 ppnDir="archive/ppns"
-dataDir="archive/data"
+recordsDir="archive/records"
 
 [ ! -d "$ppnDir" ] && mkdir -p "$ppnDir"
-[ ! -d "$dataDir" ] && mkdir -p "$dataDir"
+[ ! -d "$recordsDir" ] && mkdir -p "$recordsDir"
 
 mv *.txt archive/ppns
 mv records-* archive/records
