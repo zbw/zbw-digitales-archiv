@@ -52,6 +52,6 @@ dataDir="archive/data"
 [ ! -d "$dataDir" ] && mkdir -p "$dataDir"
 
 mv *.txt archive/ppns
-mv records-* archive/data
+mv records-* archive/records
 
 rm records.xml
