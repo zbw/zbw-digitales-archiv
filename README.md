@@ -18,9 +18,9 @@ $ sudo cpanm Catmandu::Exporter::CSV
 
 ### Usage
 
-First there must be a list of ppn-ids (one per row) in a file. A ppn (PICA production number) is a unique record identifier for bibliographic records.
+First there has to be a list of PPN IDs (one per row) in a file. A PPN (PICA production number) is a unique record identifier for bibliographic records in a CBS database.
 
-Run the script by calling the shell script with specification of the ppn file as parameter.
+Run the script by calling it with the filename as parameter.
 
 ```
 $ ./get.sh [filename]
@@ -28,11 +28,11 @@ $ ./get.sh [filename]
 
 The records are now being downloaded and converted using Catmandu's ETL engine.
 
-The ppn file will be automatically moved to a distinct directory: archive/ppns
+The PPN file will be automatically moved to a distinct directory: ```archive/ppns```
 
-A CSV file "records-{filename}.csv" will be created that stores the converted records. The column separator is "\t". The file will be moved to archive/records. 
+A CSV file ```records-[filename].csv``` will be created that stores the converted records. The column separator is tab (\t). The file will be moved to ```archive/records```. 
 
-If the mapping needs to be adjusted, it is as simple as editing the mapping file "marc2csv-solr.fix". Use Catmandu's [fix language](https://github.com/LibreCat/Catmandu/wiki/Fix-language).
+If the mapping has to be adjusted, it is as simple as editing the mapping file ```marc2csv-solr.fix```. Use Catmandu's [fix language](https://github.com/LibreCat/Catmandu/wiki/Fix-language).
 
 ## Authors
 
