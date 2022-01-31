@@ -32,7 +32,7 @@ The ppn file will be automatically moved to a distinct directory: archive/ppns
 
 A CSV file "records-{filename}.csv" will be created that stores the converted records. The column separator is "\t". The file will be moved to archive/records. 
 
-If the mapping needs to be adjusted, it is as simple as editing the mapping file "marc2csv.fix". Use Catmandu's [fix language](https://github.com/LibreCat/Catmandu/wiki/Fix-language).
+If the mapping needs to be adjusted, it is as simple as editing the mapping file "marc2csv-solr.fix". Use Catmandu's [fix language](https://github.com/LibreCat/Catmandu/wiki/Fix-language).
 
 ## Authors
 
