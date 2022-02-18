@@ -211,9 +211,7 @@ do marc_each()
 end
 # Lizenzangabe aus 540 wird in Spalte "rights" geschrieben
 do marc_each()
-  if marc_any_match('540q','DE-206')
     marc_map('540u','rights')
-  end
 end
 # URL
 marc_map('856[40]u','url',join: '|')
