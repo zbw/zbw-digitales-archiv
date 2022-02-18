@@ -1,6 +1,6 @@
 # Mappingregeln für K10Plus2DigitalesArchiv!
 # @author: Felix Hemme
-# @version: 2021-02-09 v1.2
+# @version: 2022-02-18 v1.3
 marc_map('001','identifier\.ppn')
 # Typ "Aufsatz" aus Zeitschrift
 do marc_each()
@@ -209,10 +209,10 @@ do marc_each()
     set_field('relation\.ispartofseries','(DE-627)1735209996')
   end
 end
-# Lizenzangabe aus 856 wird in Spalte "rights" geschrieben
+# Lizenzangabe aus 540 wird in Spalte "rights" geschrieben
 do marc_each()
-  if marc_match('856[42]y','Terms of use')
-    marc_map('856[42]u','rights')
+  if marc_any_match('540q','DE-206')
+    marc_map('540u','rights')
   end
 end
 # URL
