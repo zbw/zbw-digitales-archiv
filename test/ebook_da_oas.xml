@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22        4500</leader>
+  <controlfield tag="001">1775765679</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20220204124431.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">211029s2020    gw |||||o     00| ||ger c</controlfield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">11159/6609</subfield>
+    <subfield code="2">hdl</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1775765679</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1775765679</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">ger</subfield>
+  </datafield>
+  <datafield tag="044" ind1=" " ind2=" ">
+    <subfield code="c">XA-DE</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Preuß, David</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Transformation der Wirtschaftswissenschaften</subfield>
+    <subfield code="b">kann der Paradigmatische Pluralismus transformativ-normativ wirken?</subfield>
+    <subfield code="c">David Preuß, Felix Roll, Ashkan Salim und Franca Schumann</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="a">Hamburg</subfield>
+    <subfield code="b">Zentrum für Ökonomische und Soziologische Studien, Universität Hamburg</subfield>
+    <subfield code="c">September 2020</subfield>
+  </datafield>
+  <datafield tag="300" ind1=" " ind2=" ">
+    <subfield code="a">1 Online-Ressource (circa 52 Seiten)</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="490" ind1="1" ind2=" ">
+    <subfield code="a">ExMA-Papers</subfield>
+    <subfield code="v">43</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Roll, Felix</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Salim, Ashkan</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="700" ind1="1" ind2=" ">
+    <subfield code="a">Schumann, Franca</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="830" ind1=" " ind2="0">
+    <subfield code="a">ExMA-Papers</subfield>
+    <subfield code="v">43</subfield>
+    <subfield code="9">43</subfield>
+    <subfield code="w">(DE-627)897757939</subfield>
+    <subfield code="w">(DE-576)493496912</subfield>
+    <subfield code="w">(DE-600)2905605-6</subfield>
+    <subfield code="x">1868-5005</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://www.wiso.uni-hamburg.de/fachbereich-sozoek/professuren/heise/zoess/publikationen/exma-papers/exma-43-paradigmatischer-pluralismus-2020.pdf</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">kostenfrei</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://hdl.handle.net/11159/6609</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">kostenfrei</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">BO</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="2">26</subfield>
+    <subfield code="1">01</subfield>
+    <subfield code="b">3997438102</subfield>
+    <subfield code="f">K:</subfield>
+    <subfield code="d">ZSS 45</subfield>
+    <subfield code="h">DA:oas</subfield>
+    <subfield code="x">0206</subfield>
+    <subfield code="y">z1k</subfield>
+    <subfield code="z">22-11-21</subfield>
+  </datafield>
+  <datafield tag="995" ind1=" " ind2=" ">
+    <subfield code="2">26</subfield>
+    <subfield code="1">01</subfield>
+    <subfield code="a">DA:oas</subfield>
+  </datafield>
+</record>

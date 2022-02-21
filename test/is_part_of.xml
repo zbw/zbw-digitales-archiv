@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     caa a22        4500</leader>
+  <controlfield tag="001">1747882151</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210312121912.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">210209s2019    xx |||||o     00| ||eng c</controlfield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">10.32479/ijeep.8146</subfield>
+    <subfield code="2">doi</subfield>
+  </datafield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">11159/5144</subfield>
+    <subfield code="2">hdl</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)1747882151</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)KXP1747882151</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rda</subfield>
+  </datafield>
+  <datafield tag="041" ind1=" " ind2=" ">
+    <subfield code="a">eng</subfield>
+  </datafield>
+  <datafield tag="100" ind1="1" ind2=" ">
+    <subfield code="a">Hidjaz, Kamal</subfield>
+    <subfield code="e">VerfasserIn</subfield>
+    <subfield code="0">(DE-588)1227465033</subfield>
+    <subfield code="0">(DE-627)174847295X</subfield>
+    <subfield code="4">aut</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Effectiveness of environmental policy enforcement and the impact by industrial mining, energy, mineral, and gas activities in Indonesia</subfield>
+    <subfield code="c">Kamal Hidjaz</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">2019</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="506" ind1="0" ind2=" ">
+    <subfield code="a">Open Access</subfield>
+    <subfield code="e">Controlled Vocabulary for Access Rights</subfield>
+    <subfield code="q">DE-206</subfield>
+    <subfield code="u">http://purl.org/coar/access_right/c_abf2</subfield>
+  </datafield>
+  <datafield tag="540" ind1=" " ind2=" ">
+    <subfield code="q">DE-206</subfield>
+    <subfield code="a">Namensnennung 4.0 International</subfield>
+    <subfield code="f">CC BY 4.0</subfield>
+    <subfield code="2">cc</subfield>
+    <subfield code="u">https://creativecommons.org/licenses/by/4.0/</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Environmental Policy</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Environmental Law</subfield>
+  </datafield>
+  <datafield tag="650" ind1=" " ind2="4">
+    <subfield code="a">Socio-Legal Research</subfield>
+  </datafield>
+  <datafield tag="773" ind1="0" ind2="8">
+    <subfield code="i">Enthalten in</subfield>
+    <subfield code="t">International Journal of Energy Economics and Policy</subfield>
+    <subfield code="d">Mersin : EconJournals, 2011</subfield>
+    <subfield code="d">Mersin : EconJournals, 2011</subfield>
+    <subfield code="g">9(2019), 6, Seite 79-85</subfield>
+    <subfield code="h">Online-Ressource</subfield>
+    <subfield code="h">Online-Ressource</subfield>
+    <subfield code="w">(DE-627)670216917</subfield>
+    <subfield code="w">(DE-600)2632577-9</subfield>
+    <subfield code="w">(DE-576)352346841</subfield>
+    <subfield code="x">2146-4553</subfield>
+    <subfield code="7">|||s</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="g">volume:9</subfield>
+    <subfield code="g">year:2019</subfield>
+    <subfield code="g">number:6</subfield>
+    <subfield code="g">pages:79-85</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://econjournals.com/index.php/ijeep/article/download/8146/4635</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="z">kostenfrei</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">https://doi.org/10.32479/ijeep.8146</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">kostenfrei</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://hdl.handle.net/11159/5144</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">kostenfrei</subfield>
+  </datafield>
+  <datafield tag="936" ind1="u" ind2="w">
+    <subfield code="d">9</subfield>
+    <subfield code="j">2019</subfield>
+    <subfield code="e">6</subfield>
+    <subfield code="h">79-85</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">AR</subfield>
+  </datafield>
+  <datafield tag="952" ind1=" " ind2=" ">
+    <subfield code="d">9</subfield>
+    <subfield code="j">2019</subfield>
+    <subfield code="e">6</subfield>
+    <subfield code="h">79-85</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="2">26</subfield>
+    <subfield code="1">01</subfield>
+    <subfield code="b">3850328597</subfield>
+    <subfield code="h">DA:oac</subfield>
+    <subfield code="x">0206</subfield>
+    <subfield code="y">x1z</subfield>
+    <subfield code="z">09-02-21</subfield>
+  </datafield>
+  <datafield tag="995" ind1=" " ind2=" ">
+    <subfield code="2">26</subfield>
+    <subfield code="1">01</subfield>
+    <subfield code="a">DA:oac</subfield>
+  </datafield>
+</record>

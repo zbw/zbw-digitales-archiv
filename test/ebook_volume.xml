@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record xmlns="http://www.loc.gov/MARC21/slim">
+  <leader>     cam a22       c4500</leader>
+  <controlfield tag="001">102835892X</controlfield>
+  <controlfield tag="003">DE-627</controlfield>
+  <controlfield tag="005">20210903192241.0</controlfield>
+  <controlfield tag="007">cr uuu---uuuuu</controlfield>
+  <controlfield tag="008">180806s2016    xx |||||o     00| ||und c</controlfield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">10.30958/ajbe/v2i1</subfield>
+    <subfield code="2">doi</subfield>
+  </datafield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">10.30958/ajbe/v2i2</subfield>
+    <subfield code="2">doi</subfield>
+  </datafield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">10.30958/ajbe/v2i3</subfield>
+    <subfield code="2">doi</subfield>
+  </datafield>
+  <datafield tag="024" ind1="7" ind2=" ">
+    <subfield code="a">10.30958/ajbe/v2i4</subfield>
+    <subfield code="2">doi</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-627)102835892X</subfield>
+  </datafield>
+  <datafield tag="035" ind1=" " ind2=" ">
+    <subfield code="a">(DE-599)GBV102835892X</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">DE-627</subfield>
+    <subfield code="b">ger</subfield>
+    <subfield code="c">DE-627</subfield>
+    <subfield code="e">rakwb</subfield>
+  </datafield>
+  <datafield tag="245" ind1="1" ind2="0">
+    <subfield code="a">Athens journal of business &amp; economics</subfield>
+    <subfield code="n">2.2016</subfield>
+  </datafield>
+  <datafield tag="264" ind1=" " ind2="1">
+    <subfield code="c">2016</subfield>
+  </datafield>
+  <datafield tag="336" ind1=" " ind2=" ">
+    <subfield code="a">Text</subfield>
+    <subfield code="b">txt</subfield>
+    <subfield code="2">rdacontent</subfield>
+  </datafield>
+  <datafield tag="337" ind1=" " ind2=" ">
+    <subfield code="a">Computermedien</subfield>
+    <subfield code="b">c</subfield>
+    <subfield code="2">rdamedia</subfield>
+  </datafield>
+  <datafield tag="338" ind1=" " ind2=" ">
+    <subfield code="a">Online-Ressource</subfield>
+    <subfield code="b">cr</subfield>
+    <subfield code="2">rdacarrier</subfield>
+  </datafield>
+  <datafield tag="773" ind1="1" ind2="8">
+    <subfield code="w">(DE-627)85561451X</subfield>
+    <subfield code="w">(DE-576)462896099</subfield>
+    <subfield code="w">(DE-600)2851008-2</subfield>
+    <subfield code="x">2241-794X</subfield>
+    <subfield code="g">2.2016</subfield>
+    <subfield code="q">2016,0002,00</subfield>
+    <subfield code="7">|||s</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://dx.doi.org/10.30958/ajbe/v2i1</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">kostenfrei</subfield>
+    <subfield code="3">Volltext</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://dx.doi.org/10.30958/ajbe/v2i2</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">kostenfrei</subfield>
+    <subfield code="3">Volltext</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://dx.doi.org/10.30958/ajbe/v2i3</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">kostenfrei</subfield>
+    <subfield code="3">Volltext</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="0">
+    <subfield code="u">http://dx.doi.org/10.30958/ajbe/v2i4</subfield>
+    <subfield code="x">Resolving-System</subfield>
+    <subfield code="z">kostenfrei</subfield>
+    <subfield code="3">Volltext</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">https://creativecommons.org/licenses/by-nc/4.0/</subfield>
+    <subfield code="x">Verlag</subfield>
+    <subfield code="y">Terms of use</subfield>
+  </datafield>
+  <datafield tag="951" ind1=" " ind2=" ">
+    <subfield code="a">JV</subfield>
+  </datafield>
+  <datafield tag="980" ind1=" " ind2=" ">
+    <subfield code="2">26</subfield>
+    <subfield code="1">01</subfield>
+    <subfield code="b">1791765777</subfield>
+    <subfield code="d">ZSP 200</subfield>
+    <subfield code="x">0206</subfield>
+    <subfield code="y">z1z</subfield>
+    <subfield code="z">06-08-18</subfield>
+  </datafield>
+</record>
