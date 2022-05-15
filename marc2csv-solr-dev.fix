@@ -1,0 +1,367 @@
+# Mappingregeln für K10Plus2DigitalesArchiv!
+# @author: Felix Hemme
+# @version: 2022-04-05 v2.0
+
+# Für PPN aus K10plus
+marc_map('001','identifier\.ppn')
+
+# Für PPN aus E-Book-Pool
+#marc_map('001','identifier\.ppn')
+#prepend('identifier\.ppn','EBP')
+# Typ "Aufsatz" aus Zeitschrift
+do marc_each()
+  if marc_match('7737|||s','s')
+    set_field('type','b')
+  end
+end
+# Typ "Aufsatz" aus Monografie
+do marc_each()
+  if marc_match('7737|||m','m')
+    set_field('type','b')
+  end
+end
+# Typ "Buch"
+do marc_each()
+  if marc_match('LDR/7','m')
+    set_field('type','m')
+  end
+end
+# Typ "Band"
+do marc_each()
+  if marc_match('LDR/19','c')
+    set_field('type','c')
+  end
+end
+
+# <!-- ZURÜCKGESTELLT, BIS ABSTIMMUNG MIT ECONSTOR ERFOLGT IST -->
+# Typ "Article" (Aufsatz aus Zeitschrift)
+# 002@ Pos.2 = "s"
+#do marc_each()
+#  if marc_match('7737|||s','s')
+#    set_field('type','b')
+#  end
+#end
+#
+# Typ "Book Part" (Aufsatz aus Monografie)
+# 002@ Pos.2 = "s"
+#do marc_each()
+#  if marc_match('7737|||m','m')
+#    set_field('type','bp')
+#  end
+#end
+#
+# Typ "Book"
+# 002@ Pos.2 = "a" wenn 013D $8 nicht eins von
+# [Konferenzschrift || Bericht || Forschungsbericht || Hochschulschrift]
+# ist
+#do marc_each()
+#  if marc_match('LDR/7','m')
+#    unless marc_any_match('655[,7]a','Konferenzschrift')
+#      marc_map('LDR/7','type')
+#	end
+#	unless marc_any_match('655[,7]a','Bericht')
+#	  marc_map('LDR/7','type')
+#	end
+#	unless marc_any_match('655[,7]a','Forschungsbericht')
+#	  marc_map('LDR/7','type')
+#	end
+#	unless marc_any_match('655[,7]a','Hochschulschrift')
+#      marc_map('LDR/7','type')
+#	end
+#  end
+#end
+#
+# Typ "Periodical Part"
+# 002@ Pos.2 = "v"
+#do marc_each()
+#  if marc_match('LDR/19','c')
+#    marc_map('LDR/19','type')
+#  end
+#end
+#
+# Typ "Conference Paper"
+#do marc_each()
+#  if marc_any_match('655[,7]a','Konferenzschrift')
+#    set_field('type','cp')
+#  end
+#end
+#
+# Typ "Proceedings"
+#do marc_each()
+#  if marc_any_match('655[,7]a','Bericht')
+#    set_field('type','p')
+#  end
+#end
+#
+# Typ "Research Report"
+#do marc_each()
+#  if marc_any_match('655[,7]a','Forschungsbericht')
+#    set_field('type','rr')
+#  end
+#end
+#
+# Typ "Thesis"
+#do marc_each()
+#  if marc_any_match('655[,7]a','Hochschulschrift')
+#    set_field('type','t')
+#  end
+#end
+
+# Erscheinungsjahr
+marc_map('008/07-10','date\.issued')
+
+# ISSN
+# Mehrere ISBN werden mit "|" voneinander getrennt
+marc_map('773[08]x','relation\.issn', join:'|')
+
+# ISBN
+# Mehrere ISBN werden mit "|" voneinander getrennt
+marc_map('020a','identifier\.isbn', join:'|')
+
+# DOI, URN, Handle sind in einer gemeinsamen Spalte enthalten
+# Mehrere DOI, URN, Handle werden mit "|" voneinander getrennt
+do marc_each()
+  if marc_match('024[7]2','doi')
+    marc_map('024[7]a','identifier\.pi',join:'|')
+	prepend('identifier\.pi','doi:')
+  elsif marc_match('024[7]2','hdl')
+    marc_map('024[7]a','identifier\.pi',join:'|')
+	prepend('identifier\.pi','hdl:')
+  elsif marc_match('024[7]2','urn')
+    marc_map('024[7]a','identifier\.pi',join:'|')
+	prepend('identifier\.pi','urn:')
+  end
+end
+
+# Citation/Quellenangabe bei Zeitschriften
+do marc_each()
+  marc_map('952d','econstor\.citation\.volume')
+  #marc_map('952j','econstor\.citation\.year')
+  marc_map('952e','econstor\.citation\.issue')
+  marc_map('952h','econstor\.citation\.startpage')
+  replace_all('econstor\.citation\.startpage','(^[\d]{1,})(-)([\d]{1,}$)','$1')
+  marc_map('952h','econstor\.citation\.endpage')
+  replace_all('econstor\.citation\.endpage','(^[\d]{1,})(-)([\d]{1,}$)','$3')
+  marc_map('952i','econstor\.citation\.articlenumber')
+end
+
+# Angaben zur Sprache mit "|" getrennt
+marc_map('041a','language\.iso', join:'|')
+
+# Wenn die Nummer in 084 ein JEL-Code ist, kommt er in Spalte "subject.jel"
+# Mehrere Codes werden mit "|" voneinander getrennt
+# !!!Zur Zeit werden über die KXP-Schnittstelle nicht alle Codes ausgegeben!!!
+do marc_each()
+  if marc_match('0842','JEL')
+    marc_map('084a','subject\.jel', join:'|')
+  end
+end
+
+# Keine Prüfung auf Beziehungskennzeichnung für Feld 100
+# Keine Unterscheidung zwischen author und editor
+marc_map('100a','contributor\.primary')
+
+# Titel
+marc_map('245ab','title',join:' : ')
+
+# Zählung zum Titel
+marc_map('245np','part',join:' ; ')
+
+# Titelvariante
+marc_map('246[1]a','title\.alternative')
+
+# Verlagsort und Verlagsname mit " : " getrennt
+marc_map('264ab','publisher', join:' : ')
+
+# Veröffentlichungsangabe
+marc_map('250a','description\.version')
+
+# Reihen-Name
+marc_map('490a','relation\.ispartofseries',join:'. ')
+
+# Abstract
+marc_map('520a','description\.abstract')
+
+# Keine Prüfung auf Beziehungskennzeichnung für Feld 700
+# Keine Unterscheidung zwischen author und editor
+marc_map('700a','contributor\.other',join: '|')
+
+# Zeitschriften-ID
+marc_map('773w','relation\.journalppn',join:'|')
+
+# Zeitschriften-Name
+marc_map('773t','relation\.ispartofjournal',join:'|')
+
+# Reihen-ID
+if marc_has('810')
+  marc_map('810w','relation\.seriesppn',join:'|')
+end
+if marc_has('830')
+  marc_map('830w','relation\.seriesppn',join:'|')
+end
+
+# ZDB-ID bei Zeitschriften
+do marc_each()
+  if marc_any_match('7737|||s','s')
+    if marc_any_match('773w','(DE-600)')
+	  marc_replace_all('773w','^((?!DE-600).)*$','')
+	  marc_replace_all('773w','^(\(DE-600\))(\d{7}-[\dxX]{1}$)','$2')
+	  marc_map('773w','relation\.journalzdbid')
+	end
+  end
+end
+
+# ZDB-ID bei Zeitschriften
+do marc_each()
+  if marc_any_match('810w','(DE-600)')
+	marc_replace_all('810w','^((?!DE-600).)*$','')
+	marc_replace_all('810w','^(\(DE-600\))(\d{7}-[\dxX]{1}$)','$2')
+	marc_map('810w','relation\.serieszdbid')
+  end
+end
+
+# Mappe Signaturen auf Lax-Satz-PPNs
+do marc_each()
+  if marc_any_match('980d','ZSM 1')
+    set_field('relation\.seriesppn','(DE-627)1730492479')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 3')
+    set_field('relation\.seriesppn','(DE-627)1730497268')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 4')
+    set_field('relation\.seriesppn','(DE-627)1730499090')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 6')
+    set_field('relation\.seriesppn','(DE-627)1735350516')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 7')
+    set_field('relation\.seriesppn','(DE-627)1738745007')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 8')
+    set_field('relation\.seriesppn','(DE-627)1740221109')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 9')
+    set_field('relation\.seriesppn','(DE-627)1740222571')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 10')
+    set_field('relation\.seriesppn','(DE-627)1740223195')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 11')
+    set_field('relation\.seriesppn','(DE-627)1740224299')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 12')
+    set_field('relation\.seriesppn','(DE-627)1740225600')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 13')
+    set_field('relation\.seriesppn','(DE-627)1740226062')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 14')
+    set_field('relation\.seriesppn','(DE-627)1740227018')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 15')
+    set_field('relation\.seriesppn','(DE-627)1740227549')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 16')
+    set_field('relation\.seriesppn','(DE-627)1740229053')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 17')
+    set_field('relation\.seriesppn','(DE-627)1740229983')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 18')
+    set_field('relation\.seriesppn','(DE-627)1740230590')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 19')
+    set_field('relation\.seriesppn','(DE-627)1740231120')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 20')
+    set_field('relation\.seriesppn','(DE-627)1740231724')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 21')
+    set_field('relation\.seriesppn','(DE-627)1740232453')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 22')
+    set_field('relation\.seriesppn','(DE-627)176098941X')
+  end
+end
+
+# Alles mit dem Abrufzeichen DA:oas
+do marc_each()
+  if marc_any_match('980h','DA:oas')
+    if marc_match('LDR/7','m')
+      set_field('relation\.seriesppn','(DE-627)1735209643')
+	if marc_match('LDR/19','c')
+	  set_field('relation\.seriesppn','(DE-627)1735209643')
+	if marc_match('7737|||s','s')
+	  set_field('relation\.ispartof','(DE-627)1735209643')
+    if marc_match('7737|||m','m')
+	  set_field('relation\.ispartof','(DE-627)1735209643')
+    end
+	end
+	end
+	end
+  end
+end
+
+# Alles mit dem Abrufzeichen DA:ras
+do marc_each()
+  if marc_any_match('980h','DA:ras')
+    set_field('relation\.seriesppn','(DE-627)1735209996')
+  end
+end
+
+# Lizenzangabe aus 540 wird in Spalte "rights.license" geschrieben
+do marc_each()
+    marc_map('540u','rights\.license')
+end
+
+# Eine hardcodierte Basis-Lizenzangabe wird in "rights" geschrieben
+set_field('rights','https://zbw.eu/econis-archiv/termsofuse')
+
+# URL
+marc_map('856[4,0]u','url',join: '|')
+
+# DDC und Keywords sollten ins Elementeset aufgenommen werden, nachträglich wurde jedoch entschieden,
+# die Felder nicht zu belegen. Deshalb werden sie leer angelegt.
+set_field('subject\.ddc','')
+set_field('subject\.keyword','')
+
+remove_field('_id')
+remove_field('record')
