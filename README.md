@@ -20,11 +20,21 @@ $ sudo cpanm Catmandu::Exporter::CSV
 
 First there has to be a list of PPN IDs (one per row) in a file. A PPN (PICA production number) is a unique record identifier for bibliographic records in a CBS database.
 
-Run the script by calling it with the filename as parameter.
+The program expects three arguments when invoked:
 
 ```
-$ ./get.sh [filename]
+./da_fetch.sh [filename] [target] [ISIL].
 ```
+
+If no target is specified, the data is extracted from the K10plus union catalog.
+
+The following targets are available:
+- k10plus (database 1.1)
+- ebooks (database 1.2)
+- nl-monographs (database 1.50)
+- nl journals (database 1.55)
+
+If no ISIL is specified, the identifier.packageid column remains empty.
 
 The records are now being downloaded and converted using Catmandu's ETL engine.
 
@@ -32,11 +42,12 @@ The PPN file will be automatically moved to a distinct directory: ```archive/ppn
 
 A CSV file ```records-[filename].csv``` will be created that stores the converted records. The column separator is tab (\t). The file will be moved to ```archive/records```. 
 
-If the mapping has to be adjusted, it is as simple as editing the mapping file ```marc2csv-solr.fix```. Use Catmandu's [fix language](https://github.com/LibreCat/Catmandu/wiki/Fix-language).
+If the mapping has to be adjusted, it is as simple as editing the mapping file ```da_fetch_mapping.fix```. Use Catmandu's [fix language](https://github.com/LibreCat/Catmandu/wiki/Fix-language).
 
 ## Authors
 
 * **Felix Hemme** - *Initial work* - [ZBW](https://zbw.eu/de/)
+* **Luisa Kramer** - *Extensions within the scope of the SAVE project* - [ZBW](https://zbw.eu/de/)
 
 ## License
 
