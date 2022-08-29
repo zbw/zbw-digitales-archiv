@@ -47,7 +47,7 @@ If the mapping has to be adjusted, it is as simple as editing the mapping file `
 ## Authors
 
 * **Felix Hemme** - *Initial work* - [ZBW](https://zbw.eu/de/)
-* **Luisa Kramer** - *Extensions within the scope of the SAVE project* - [ZBW](https://zbw.eu/de/)
+* **Luisa Kramer-Ibig** - *Extensions within the scope of the SAVE project* - [ZBW](https://zbw.eu/de/)
 
 ## License
 
