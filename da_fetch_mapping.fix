@@ -1,6 +1,6 @@
-# Mapppingregeln für K10Plus2DigitalesArchiv!
-# @author: Felix Hemme
-# @version: 2022-04-05 v2.0
+# Mapppingregeln für CBS2DigitalesArchiv!
+# @author: Felix Hemme, Luisa Kramer
+# @version: 2022-08-29 v3.0
 
 # Nimm Variable an
 add_field('target','{{target}}')
@@ -22,33 +22,6 @@ elsif all_match('target','nl-zeitschriften')
   marc_map('001','identifier\.ppn')
   prepend('identifier\.ppn','NLZ')
 end
-
-# <!-- "Alte Dokumenttypen" -->
-# Typ "Aufsatz" aus Zeitschrift
-#do marc_each()
-#  if marc_match('7737|||s','s')
-#    set_field('type','b')
-#  end
-#end
-# Typ "Aufsatz" aus Monografie
-#do marc_each()
-#  if marc_match('7737|||m','m')
-#    set_field('type','b')
-#  end
-#end
-# Typ "Buch"
-#do marc_each()
-#  if marc_match('LDR/7','m')
-#    set_field('type','m')
-#  end
-#end
-# Typ "Band"
-#do marc_each()
-#  if marc_match('LDR/19','c')
-#    set_field('type','c')
-#  end
-#end
-
 
 # Typ "Article" (Aufsatz aus Zeitschrift)
 # 002@ Pos.2 = "s"
