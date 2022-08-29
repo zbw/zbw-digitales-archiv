@@ -29,10 +29,10 @@ The program expects three arguments when invoked:
 If no target is specified, the data is extracted from the K10plus union catalog.
 
 The following targets are available:
-- k10plus (database 1.1)
-- ebooks (database 1.2)
-- nl-monographs (database 1.50)
-- nl journals (database 1.55)
+- ```k10plus``` (database 1.1)
+- ```ebooks``` (database 1.2)
+- ```nl-monographien``` (database 1.50)
+- ```nl-zeitschriften``` (database 1.55)
 
 If no ISIL is specified, the identifier.packageid column remains empty.
 
