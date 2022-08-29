@@ -1,0 +1,501 @@
+# Mapppingregeln für K10Plus2DigitalesArchiv!
+# @author: Felix Hemme
+# @version: 2022-04-05 v2.0
+
+# Nimm Variable an
+add_field('target','{{target}}')
+add_field('isil','{{isil}}')
+
+if all_match('target','k10plus')
+  # Für PPN aus K10plus
+  marc_map('001','identifier\.ppn')
+elsif all_match('target','ebooks')
+  # Für PPN aus E-Book-Pool
+  marc_map('001','identifier\.ppn')
+  prepend('identifier\.ppn','EBP')
+elsif all_match('target','nl-monographien')
+  # Für PPN aus NL-Mono-Pool
+  marc_map('001','identifier\.ppn')
+  prepend('identifier\.ppn','NLM')
+elsif all_match('target','nl-zeitschriften')
+  # Für PPN aus NL-ZS-Pool
+  marc_map('001','identifier\.ppn')
+  prepend('identifier\.ppn','NLZ')
+end
+
+# <!-- "Alte Dokumenttypen" -->
+# Typ "Aufsatz" aus Zeitschrift
+#do marc_each()
+#  if marc_match('7737|||s','s')
+#    set_field('type','b')
+#  end
+#end
+# Typ "Aufsatz" aus Monografie
+#do marc_each()
+#  if marc_match('7737|||m','m')
+#    set_field('type','b')
+#  end
+#end
+# Typ "Buch"
+#do marc_each()
+#  if marc_match('LDR/7','m')
+#    set_field('type','m')
+#  end
+#end
+# Typ "Band"
+#do marc_each()
+#  if marc_match('LDR/19','c')
+#    set_field('type','c')
+#  end
+#end
+
+
+# Typ "Article" (Aufsatz aus Zeitschrift)
+# 002@ Pos.2 = "s"
+do marc_each()
+  if marc_match('7737|||s','s')
+    set_field('type','b')
+  end
+end
+
+# Typ "Book Part" (Aufsatz aus Monografie)
+# 002@ Pos.2 = "s"
+do marc_each()
+  if marc_match('7737|||m','m')
+    set_field('type','bp')
+  end
+end
+
+# Typ "Book"
+# 002@ Pos.2 = "a" wenn 013D $8 nicht eins von
+# [Konferenzschrift || Bericht || Forschungsbericht || Hochschulschrift]
+# ist
+do marc_each()
+  if marc_match('LDR/7','m')
+    unless marc_any_match('655[,7]a','Konferenzschrift')
+      marc_map('LDR/7','type')
+	end
+	unless marc_any_match('655[,7]a','Bericht')
+	  marc_map('LDR/7','type')
+	end
+	unless marc_any_match('655[,7]a','Forschungsbericht')
+	  marc_map('LDR/7','type')
+	end
+	unless marc_any_match('655[,7]a','Hochschulschrift')
+      marc_map('LDR/7','type')
+	end
+  end
+end
+
+# Typ "Periodical Part"
+# 002@ Pos.2 = "v"
+do marc_each()
+  if marc_match('LDR/19','c')
+    marc_map('LDR/19','type')
+  end
+end
+
+# Typ "Conference Paper"
+do marc_each()
+  if marc_any_match('655[,7]a','Konferenzschrift')
+    set_field('type','cp')
+  end
+end
+
+# Typ "Proceedings"
+do marc_each()
+  if marc_any_match('655[,7]a','Bericht')
+    set_field('type','p')
+  end
+end
+
+# Typ "Research Report"
+do marc_each()
+  if marc_any_match('655[,7]a','Forschungsbericht')
+    set_field('type','rr')
+  end
+end
+
+# Typ "Thesis"
+do marc_each()
+  if marc_any_match('655[,7]a','Hochschulschrift')
+    set_field('type','t')
+  end
+end
+
+# Erscheinungsjahr
+marc_map('008/07-10','date\.issued')
+
+# ISSN
+# Mehrere ISBN werden mit "|" voneinander getrennt
+marc_map('773[08]x','relation\.issn', join:'|')
+
+# ISBN
+# Mehrere ISBN werden mit "|" voneinander getrennt
+#do marc each()
+if marc_has('020')
+  marc_map('020a','identifier\.isbn', join:'|')
+elsif marc_has('773')
+  marc_map('773[08]z','identifier\.isbn', join:'|')
+end
+
+# DOI, URN, Handle sind in einer gemeinsamen Spalte enthalten
+# Mehrere DOI, URN, Handle werden mit "|" voneinander getrennt
+# Problem: Vortexte können noch nicht erzeugt werden (2022-08-03)
+do marc_each()
+  if marc_match('024[7]2','doi') 
+    marc_map('024[7]a','identifier\.pi.$append')
+  elsif marc_match('024[7]2','hdl')
+    marc_map('024[7]a','identifier\.pi.$append')
+  elsif marc_match('024[7]2','urn')
+    marc_map('024[7]a','identifier\.pi.$append')
+  end
+end
+join_field('identifier\.pi','|')
+
+# Citation/Quellenangabe bei Zeitschriften
+do marc_each()
+  marc_map('952d','econstor\.citation\.volume')
+  #marc_map('952j','econstor\.citation\.year')
+  marc_map('952e','econstor\.citation\.issue')
+  marc_map('952h','econstor\.citation\.startpage')
+  replace_all('econstor\.citation\.startpage','(^[\d]{1,})(-)([\d]{1,}$)','$1')
+  marc_map('952h','econstor\.citation\.endpage')
+  replace_all('econstor\.citation\.endpage','(^[\d]{1,})(-)([\d]{1,}$)','$3')
+  marc_map('952i','econstor\.citation\.articlenumber')
+end
+
+# Angaben zur Sprache mit "|" getrennt
+marc_map('041a','language\.iso', join:'|')
+
+# Wenn die Nummer in 084 ein JEL-Code ist, kommt er in Spalte "subject.jel"
+# Mehrere Codes werden mit "|" voneinander getrennt
+if marc_match('0842','JEL')
+  marc_map('084a','subject\.jel', join:'|')
+end
+
+# Prüfung auf Beziehungskennzeichnung für Feld 100 und 700, Unterscheidung zwischen author, editor, other
+# 100 $4 = aut -> contributor.author
+# 700 $4 = aut -> contributor.author
+if marc_match('1004','aut')
+  marc_map('100a','contributor\.author.$append')
+end
+
+do marc_each()
+  if marc_match('7004','aut')
+    marc_map('700a','contributor\.author.$append')
+  end
+end
+join_field('contributor\.author','|')
+
+# 700 $4 = edt -> contributor.editor
+do marc_each()
+  if marc_match('7004','edt')
+    marc_map('700a','contributor\.editor.$append')
+  end
+end
+join_field('contributor\.editor','|')
+
+# Alle anderen Beziehungen auf contributor.other
+do marc_each()
+  unless marc_match('7004','(edt|aut)')
+    marc_map('700a','contributor\.other.$append')
+  end
+  unless marc_match('1004','aut')
+    marc_map('100a','contributor\.other.$append')
+  end
+end
+join_field('contributor\.other','|')
+
+# Titel
+marc_map('245ab','title',join:' : ')
+
+# Zählung zum Titel
+marc_map('245np','part',join:' ; ')
+
+# Titelvariante
+marc_map('246[1]a','title\.alternative')
+
+# Verlagsort und Verlagsname mit " : " getrennt
+# Wenn selbstständige Veröffentlichung
+marc_map('264ab','publisher', join:' : ')
+# Wenn Aufsatz aus Buch (type = book part)
+if all_match('type','bp')
+  marc_map('773[08]d','publisher')
+  replace_all('publisher',',?\s?[0-9]{4}$','')
+end
+
+if marc_has('810')
+  marc_map('810w','relation\.seriesppn',join:'|')
+end
+if marc_has('830')
+  marc_map('830w','relation\.seriesppn',join:'|')
+end
+
+# Veröffentlichungsangabe
+# Wenn selbstständige Veröffentlichung
+marc_map('250a','description\.version')
+# Wenn Aufsatz aus Buch (type = book part)
+if all_match('type','bp')
+  marc_map('773[08]b','description\.version')
+end
+
+# Reihen-ID
+if marc_has('810')
+  marc_map('810w','relation\.seriesppn',join:'|')
+end
+if marc_has('830')
+  marc_map('830w','relation\.seriesppn',join:'|')
+end
+
+# Reihen-Name
+# marc_map('490a','relation\.ispartofseries',join:'. ')
+do marc_each()
+  marc_map('490a','relation\.ispartofseries.$append')
+end
+join_field('relation\.ispartofseries','|')
+
+# Abstract
+marc_map('520a','description\.abstract')
+
+# Buch-ID
+do marc_each()
+	if marc_match('7737|||m','m')
+	marc_map('773w','relation\.bookppn',join:'|')
+  end
+end
+
+# Buch-Name
+do marc_each()
+	if marc_match('7737|||m','m')
+	marc_map('773t','relation\.ispartofbook',join:'|')
+  end
+end
+
+# Zeitschriften-ID
+do marc_each()
+	if marc_match('7737|||s','s')
+	marc_map('773w','relation\.journalppn',join:'|')
+  end
+end
+
+# Zeitschriften-Name
+do marc_each()
+	if marc_match('7737|||s','s')
+	marc_map('773t','relation\.ispartofjournal',join:'|')
+  end
+end
+
+# ZDB-ID bei Zeitschriften
+do marc_each()
+  if marc_any_match('7737|||s','s')
+    if marc_any_match('773w','(DE-600)')
+	  marc_replace_all('773w','^((?!DE-600).)*$','')
+	  marc_replace_all('773w','^(\(DE-600\))(\d{7}-[\dxX]{1}$)','$2')
+	  marc_map('773w','relation\.journalzdbid')
+	end
+  end
+end
+
+# ZDB-ID bei Serien
+do marc_each()
+  if marc_any_match('810w','(DE-600)')
+	marc_replace_all('810w','^((?!DE-600).)*$','')
+	marc_replace_all('810w','^(\(DE-600\))(\d{7}-[\dxX]{1}$)','$2')
+	marc_map('810w','relation\.serieszdbid')
+  end
+end
+
+# Mappe Signaturen auf Lax-Satz-PPNs
+do marc_each()
+  if marc_any_match('980d','ZSM 1')
+    set_field('relation\.seriesppn','(DE-627)1730492479')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 3')
+    set_field('relation\.seriesppn','(DE-627)1730497268')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 4')
+    set_field('relation\.seriesppn','(DE-627)1730499090')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 6')
+    set_field('relation\.seriesppn','(DE-627)1735350516')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 7')
+    set_field('relation\.seriesppn','(DE-627)1738745007')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 8')
+    set_field('relation\.seriesppn','(DE-627)1740221109')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 9')
+    set_field('relation\.seriesppn','(DE-627)1740222571')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 10')
+    set_field('relation\.seriesppn','(DE-627)1740223195')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 11')
+    set_field('relation\.seriesppn','(DE-627)1740224299')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 12')
+    set_field('relation\.seriesppn','(DE-627)1740225600')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 13')
+    set_field('relation\.seriesppn','(DE-627)1740226062')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 14')
+    set_field('relation\.seriesppn','(DE-627)1740227018')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 15')
+    set_field('relation\.seriesppn','(DE-627)1740227549')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 16')
+    set_field('relation\.seriesppn','(DE-627)1740229053')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 17')
+    set_field('relation\.seriesppn','(DE-627)1740229983')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 18')
+    set_field('relation\.seriesppn','(DE-627)1740230590')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 19')
+    set_field('relation\.seriesppn','(DE-627)1740231120')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 20')
+    set_field('relation\.seriesppn','(DE-627)1740231724')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 21')
+    set_field('relation\.seriesppn','(DE-627)1740232453')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 22')
+    set_field('relation\.seriesppn','(DE-627)176098941X')
+  end
+end
+
+# Alles mit dem Abrufzeichen DA:oas
+do marc_each()
+  if marc_any_match('980h','DA:oas')
+    if marc_match('LDR/7','m')
+      set_field('relation\.seriesppn','(DE-627)1735209643')
+	if marc_match('LDR/19','c')
+	  set_field('relation\.seriesppn','(DE-627)1735209643')
+	if marc_match('7737|||s','s')
+	  set_field('relation\.ispartof','(DE-627)1735209643')
+    if marc_match('7737|||m','m')
+	  set_field('relation\.ispartof','(DE-627)1735209643')
+    end
+	end
+	end
+	end
+  end
+end
+
+# Alles mit dem Abrufzeichen DA:ras
+do marc_each()
+  if marc_any_match('980h','DA:ras')
+    set_field('relation\.seriesppn','(DE-627)1735209996')
+  end
+end
+
+# Lizenzangabe aus 540 wird in Spalte "rights.license" geschrieben
+do marc_each()
+    marc_map('540u','rights\.license')
+end
+
+# Eine hardcodierte Basis-Lizenzangabe wird in "rights" geschrieben
+set_field('rights','https://zbw.eu/econis-archiv/termsofuse')
+
+
+# Abhängig vom ISIL wird ein Wert in "identifier.packageid"\
+# und "collection_handle" geschrieben
+# sowie der feste Wert "wp" in Spalte "type" eingetragen
+if all_match('isil','zdb-33-sfen')
+  # Für ISIL = zdb-33-sfen
+  set_field('identifier\.packageid','ZDB-33-SFEN')
+  set_field('collection_handle','11159/6526')
+  set_field('type','wp')
+#elsif all_match('target','ebooks')
+  # Für ISIL = 
+#  set_field('identifier\.packageid','')
+#elsif all_match('target','nl-monographien')
+  # Für ISIL = 
+#  set_field('identifier\.packageid','')
+#elsif all_match('target','nl-zeitschriften')
+  # Für ISIL = 
+#  set_field('identifier\.packageid','')
+end
+
+# URL
+marc_map('856[4,0]u','url',join: '|')
+
+# DOI aus 856 extrahieren, editieren und in "identifier.pi" übernehmen
+do marc_each()
+  if marc_any_match('856[40]u','doi\.org.*')
+    # nur substring der doi übernehmen
+    marc_replace_all('856[40]u','https?:\/\/(www\.)?doi\.org/','')
+	marc_map('856[40]u','identifier\.pi.$append')
+  end
+end
+join_field('identifier\.pi','|')
+
+# SSRN-Abstract-ID aus 856 extrahieren und in "identifier" übernehmen
+# SSRN-Abstract-ID aus 856 extrahieren und für Wert in "filepath" nutzen
+if all_match('isil','zdb-33-sfen')
+  do marc_each()
+    if marc_any_match('856[40]m','X:ELVSSRN')
+      if marc_any_match('856[40]u','ssrn.com/abstract=.*')
+	    marc_replace_all('856[40]u','https?:\/\/(www\.)?ssrn\.com\/abstract=','')
+	    marc_map('856[40]u','identifier')
+		prepend('identifier','ELVSSRN:')
+		marc_map('856[40]u','filepath')
+		prepend('filepath','M:/Work/ZDB-33-SFEN/upload/')
+		append('filepath','.pdf')
+	  end
+    end
+  end  
+end
+
+
+# DDC und Keywords sollten ins Elementeset aufgenommen werden, nachträglich wurde jedoch entschieden,
+# die Felder nicht zu belegen. Deshalb werden sie leer angelegt.
+set_field('subject\.ddc','')
+set_field('subject\.keyword','')
+
+remove_field('_id')
+remove_field('record')
