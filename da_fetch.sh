@@ -72,7 +72,7 @@ fi
 
 echo -e "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
-catmandu convert MARC --type XML to CSV --fix Version_kram_marc2csv-solr-dev.fix --fields identifier.ppn,type,date.issued,title,part,\
+catmandu convert MARC --type XML to CSV --fix da_fetch_mapping.fix --fields identifier.ppn,type,date.issued,title,part,\
 title.alternative,identifier.isbn,relation.issn,relation.journalzdbid,relation.serieszdbid,contributor.author,contributor.editor,contributor.other,identifier,\
 identifier.pi,rights,rights.license,publisher,language.iso,subject.jel,description.version,relation.ispartofseries,relation.seriesppn,\
 relation.ispartofjournal,relation.journalppn,relation.ispartofbook,relation.bookppn,econstor.citation.volume,econstor.citation.issue,econstor.citation.articlenumber,\
