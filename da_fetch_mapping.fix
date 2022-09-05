@@ -389,9 +389,9 @@ do marc_each()
 	if marc_match('LDR/19','c')
 	  set_field('relation\.seriesppn','(DE-627)1735209643')
 	if marc_match('7737|||s','s')
-	  set_field('relation\.ispartof','(DE-627)1735209643')
+	  set_field('relation\.journalppn','(DE-627)1735209643')
     if marc_match('7737|||m','m')
-	  set_field('relation\.ispartof','(DE-627)1735209643')
+	  set_field('relation\.journalppn','(DE-627)1735209643')
     end
 	end
 	end
