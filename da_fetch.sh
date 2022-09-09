@@ -77,7 +77,7 @@ echo -e "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
 catmandu convert MARC --type XML to CSV --fix da_fetch_mapping.fix --fields identifier.ppn,type,date.issued,title,part,\
 title.alternative,identifier.isbn,relation.issn,relation.journalzdbid,relation.serieszdbid,contributor.author,contributor.editor,contributor.other,identifier,\
-identifier.pi,rights,rights.license,publisher,language.iso,subject.jel,description.version,relation.ispartofseries,relation.seriesppn,\
+identifier.pi,rights.license,publisher,language.iso,subject.jel,description.version,relation.ispartofseries,relation.seriesppn,\
 relation.ispartofjournal,relation.journalppn,relation.ispartofbook,relation.bookppn,econstor.citation.volume,econstor.citation.issue,econstor.citation.articlenumber,\
 econstor.citation.startpage,econstor.citation.endpage,url,collection_handle,identifier.packageid,filepath,description.abstract,subject.ddc,subject.keyword --var target=${target} --var isil=${isil} --sep_char '\t' < records.xml > records-${1}.csv
 

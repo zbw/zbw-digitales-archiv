@@ -1,6 +1,6 @@
 # Conversion rules for CBS2DigitalesArchiv
 # @author: Felix Hemme, Luisa Kramer
-# @version: 2022-09-05 v3.0.1
+# @version: 2022-09-05 v3.0.2
 
 # Accept variable
 add_field('target','{{target}}')
@@ -415,7 +415,9 @@ do marc_each()
 end
 
 # A hardcoded base license statement is written into column "rights"
-set_field('rights','https://zbw.eu/econis-archiv/termsofuse')
+# 2022-09-09: The field is populated by the ingest script, no
+# need to have it written to the CSV file
+# set_field('rights','https://zbw.eu/econis-archiv/termsofuse')
 
 # Dependent on ISIL a value is written into 
 # "identifier.packageid" and ""collection_handle"
