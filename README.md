@@ -26,9 +26,10 @@ The program expects three arguments when invoked:
 ./da_fetch.sh [filename] [target] [ISIL].
 ```
 
-If no target is specified, the data is extracted from the K10plus union catalog.
+If no target is specified, the data is extracted from owc-de-206.
 
 The following targets are available:
+- ```owc-de-206``` (Arbeitskatalog der ZBW)
 - ```k10plus``` (database 1.1)
 - ```ebooks``` (database 1.2)
 - ```nl-monographien``` (database 1.50)
