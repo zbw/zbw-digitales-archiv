@@ -387,27 +387,21 @@ end
 # Everything with 8600 DA:oas
 do marc_each()
   if marc_any_match('980h','DA:oas')
-    set_field('relation\.seriesppn','(DE-627)1735209643')
+    set_field('collection_handle','11159/18')
   end
 end
-
-# 2022-09-09: not working
-#do marc_each()
-#  if marc_any_match('980h','DA:oas')
-#    if marc_match('LDR/7','m')
-#      set_field('relation\.seriesppn','(DE-627)1735209643')
-#    elsif marc_any_match('7737nnns','s')
-#      set_field('relation\.journalppn','(DE-627)1735209643')
-#    elsif marc_any_match('7737nnnm','m')
-#      set_field('relation\.journalppn','(DE-627)1735209643')
-#    end
-#  end
-#end
 
 # Everything with 8600 DA:ras
 do marc_each()
   if marc_any_match('980h','DA:ras')
-    set_field('relation\.seriesppn','(DE-627)1735209996')
+    set_field('collection_handle','11159/17')
+  end
+end
+
+# Everything with 8600 DA:cas
+do marc_each()
+  if marc_any_match('980h','DA:cas')
+    set_field('collection_handle','11159/9034')
   end
 end
 
