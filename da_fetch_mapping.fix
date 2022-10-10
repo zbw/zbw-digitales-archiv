@@ -383,6 +383,11 @@ do marc_each()
     set_field('relation\.seriesppn','(DE-627)176098941X')
   end
 end
+do marc_each()
+  if marc_any_match('980d','ZSM 23')
+    set_field('relation\.seriesppn','(DE-627)1817888560')
+  end
+end
 
 # Everything with 8600 DA:oas
 do marc_each()
