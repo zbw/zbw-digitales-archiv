@@ -201,13 +201,6 @@ if all_match('type','bp')
   replace_all('publisher',',?\s?[0-9]{4}$','')
 end
 
-if marc_has('810')
-  marc_map('810w','relation\.seriesppn',join:'|')
-end
-if marc_has('830')
-  marc_map('830w','relation\.seriesppn',join:'|')
-end
-
 # Edition
 # If independent publication
 marc_map('250a','description\.version')
@@ -421,22 +414,25 @@ end
 # set_field('rights','https://zbw.eu/econis-archiv/termsofuse')
 
 # Dependent on ISIL a value is written into 
-# "identifier.packageid" and ""collection_handle"
-# and the fixed value "wp" is entered in column "type"
-if all_match('isil','zdb-33-sfen')
-  # If ISIL = zdb-33-sfen
-  set_field('identifier\.packageid','ZDB-33-SFEN')
+# "collection_handle",
+# the ISIL is extracted and written into "identifier.packageid",
+# and the fixed value "wp" is written into "type"
+if all_match('isil','zdb-33')
+  # If ISIL = zdb-33
+  do marc_each()
+    marc_map('912a','identifier\.packageid')
+  end
   set_field('collection_handle','11159/6526')
   set_field('type','wp')
-#elsif all_match('target','ebooks')
+#elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
 #  set_field('identifier\.packageid','')
-#elsif all_match('target','nl-monographien')
+#elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
 #  set_field('identifier\.packageid','')
-#elsif all_match('target','nl-zeitschriften')
+#elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
 #  set_field('identifier\.packageid','')
@@ -457,7 +453,7 @@ join_field('identifier\.pi','|')
 
 # Extract SSRN abstract ID from 856 and use it for value in "identifier"
 # Extract SSRN abstract ID from 856 and use for value in "filepath"
-if all_match('isil','zdb-33-sfen')
+if all_match('isil','zdb-33')
   do marc_each()
     if marc_any_match('856[40]m','X:ELVSSRN')
       if marc_any_match('856[40]u','ssrn.com/abstract=.*')
@@ -465,7 +461,7 @@ if all_match('isil','zdb-33-sfen')
         marc_map('856[40]u','identifier')
         prepend('identifier','ELVSSRN:')
         marc_map('856[40]u','filepath')
-        prepend('filepath','M:/Work/ZDB-33-SFEN/upload/')
+        prepend('filepath','M:/Work/SSRN/upload/')
         append('filepath','.pdf')
       end
     end
