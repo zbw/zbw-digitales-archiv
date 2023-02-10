@@ -31,6 +31,12 @@ end
 do marc_each()
   if marc_match('7737|||s','s')
     set_field('type','b')
+  # No 773 $7 for target nl-zeitschriften
+  # Check on LDR/07 bibliographic level
+  elsif all_match('target','nl-zeitschriften')
+    if marc_match('LDR/7','b')
+      set_field('type','b')
+    end
   end
 end
 
@@ -39,6 +45,16 @@ end
 do marc_each()
   if marc_match('7737|||m','m')
     set_field('type','bp')
+  # No 773 $7 for target ebooks and nl-monographien
+  # Check on LDR/07 bibliographic level
+  elsif all_match('target','ebooks')
+    if marc_match('LDR/7','a')
+      set_field('type','bp')
+    end
+  elsif all_match('target','nl-monographien')
+    if marc_match('LDR/7','a')
+      set_field('type','bp')
+    end
   end
 end
 
