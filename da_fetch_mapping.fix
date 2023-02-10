@@ -435,9 +435,7 @@ end
 # and the fixed value "wp" is written into "type"
 if all_match('isil','zdb-33')
   # If ISIL = zdb-33
-  do marc_each()
-    marc_map('912a','identifier\.packageid')
-  end
+  marc_map('912a','identifier\.packageid', join:'|')
   set_field('collection_handle','11159/6526')
   set_field('type','wp')
 #elsif all_match('isil','???')
