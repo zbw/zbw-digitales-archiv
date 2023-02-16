@@ -58,12 +58,12 @@ fi
 
 echo -e "Datei \"$file\" wird verarbeitet."
 
-awk '{ sub("\r$", ""); print }' < ${1} > ${fileUnix}
+awk '{ sub("\r$", ""); print }' < "${1}" > "${fileUnix}"
 
 echo -e "Bitte warten. Datensätze werden heruntergeladen."
 
 # Schnittstelleninformationen
-cat ${fileUnix} | xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${format}" > records.xml
+< "${fileUnix}" xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${format}" > records.xml
 
 if [[ -s records.xml ]]
 then
@@ -79,7 +79,7 @@ catmandu convert MARC --type XML to CSV --fix da_fetch_mapping.fix --fields iden
 title.alternative,identifier.isbn,relation.issn,relation.journalzdbid,relation.serieszdbid,contributor.author,contributor.editor,contributor.other,identifier,\
 identifier.pi,rights.license,publisher,language.iso,subject.jel,description.version,relation.ispartofseries,relation.seriesppn,\
 relation.ispartofjournal,relation.journalppn,relation.ispartofbook,relation.bookppn,econstor.citation.volume,econstor.citation.issue,econstor.citation.articlenumber,\
-econstor.citation.startpage,econstor.citation.endpage,url,collection_handle,identifier.packageid,filepath,description.abstract,subject.ddc,subject.keyword --var target=${target} --var isil=${isil} --sep_char '\t' < records.xml > records-${1}.csv
+econstor.citation.startpage,econstor.citation.endpage,url,collection_handle,identifier.packageid,filepath,description.abstract,subject.ddc,subject.keyword --var target="${target}" --var isil="${isil}" --sep_char '\t' < records.xml > records-"${1}".csv
 
 if [[ -s records-${1}.csv ]]
 then
@@ -95,7 +95,7 @@ recordsDir="archive/records"
 [ ! -d "$ppnDir" ] && mkdir -p "$ppnDir"
 [ ! -d "$recordsDir" ] && mkdir -p "$recordsDir"
 
-mv *.txt archive/ppns
+mv ./*.txt archive/ppns
 mv records-* archive/records
 
 rm records.xml
