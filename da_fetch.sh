@@ -63,7 +63,7 @@ awk '{ sub("\r$", ""); print }' < "${1}" > "${fileUnix}"
 echo -e "Bitte warten. Datensätze werden heruntergeladen."
 
 # Schnittstelleninformationen
-< "${fileUnix}" xargs -n 1 -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${format}" > records.xml
+< "${fileUnix}" xargs -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${format}" > records.xml
 
 if [[ -s records.xml ]]
 then
