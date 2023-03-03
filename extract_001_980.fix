@@ -1,0 +1,19 @@
+# Conversion rules for CBS2DigitalesArchiv
+# subconversion to extract 001 and 773
+# @author: Felix Hemme
+# @version: 2023-02-22 v0.0.1
+
+marc_map('001','001')
+
+do marc_each()
+  if marc_any_match('7737|||s','s')
+    if marc_any_match('773w','(DE-627)')
+      marc_replace_all('773w','^((?!DE-627).)*$','')
+      marc_replace_all('773w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
+      marc_map('773w','773')
+    end
+  end
+end
+
+remove_field('_id')
+remove_field('record')

@@ -68,6 +68,16 @@ echo -e "Bitte warten. Datensätze werden heruntergeladen."
 if [[ -s records.xml ]]
 then
   echo -e "Download erfolgreich.";
+  # catmandu erstellt csv datei mit feldern
+  catmandu convert MARC --type XML to CSV --fix extract_001_980.fix --fields 001,773 --sep_char '\t' < records.xml > records-773-"${1}".csv
+  # l: List (001, 773) <- einlesen der csv
+
+  # for (001,773) in l:
+  #     xmlÜberordnung <- callApi 773
+  #     catmandu extrahiert Feld 980, falls vorhanden
+  #     if 980 existiert:
+  #        füge information 980 für 001 in records.xml ein
+
 else
   echo -e "Download fehlgeschlagen, Programm bricht ab.";
   exit 1
@@ -95,7 +105,7 @@ recordsDir="archive/records"
 [ ! -d "$ppnDir" ] && mkdir -p "$ppnDir"
 [ ! -d "$recordsDir" ] && mkdir -p "$recordsDir"
 
-mv ./*.txt archive/ppns
-mv records-* archive/records
+#mv ./*.txt archive/ppns
+#mv records-* archive/records
 
-rm records.xml
+#rm records.xml
