@@ -342,107 +342,107 @@ end
 # Map callnumbers to Lax record PPNs
 do marc_each()
   if marc_any_match('980d','ZSM 1')
-    set_field('relation\.seriesppn','1730492479')
+    set_field('collection_handle','11159/208')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 3')
-    set_field('relation\.seriesppn','1730497268')
+    set_field('collection_handle','11159/2270')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 4')
-    set_field('relation\.seriesppn','1730499090')
+    set_field('collection_handle','11159/2926')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 6')
-    set_field('relation\.seriesppn','1735350516')
+    set_field('collection_handle','11159/4684')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 7')
-    set_field('relation\.seriesppn','1738745007')
+    set_field('collection_handle','11159/4739')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 8')
-    set_field('relation\.seriesppn','1740221109')
+    set_field('collection_handle','11159/2551')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 9')
-    set_field('relation\.seriesppn','1740222571')
+    set_field('collection_handle','11159/3309')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 10')
-    set_field('relation\.seriesppn','1740223195')
+    set_field('collection_handle','11159/2308')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 11')
-    set_field('relation\.seriesppn','1740224299')
+    set_field('collection_handle','11159/1678')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 12')
-    set_field('relation\.seriesppn','1740225600')
+    set_field('collection_handle','11159/1103')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 13')
-    set_field('relation\.seriesppn','1740226062')
+    set_field('collection_handle','11159/1663')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 14')
-    set_field('relation\.seriesppn','1740227018')
+    set_field('collection_handle','11159/2275')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 15')
-    set_field('relation\.seriesppn','1740227549')
+    set_field('collection_handle','11159/1045')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 16')
-    set_field('relation\.seriesppn','1740229053')
+    set_field('collection_handle','11159/1047')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 17')
-    set_field('relation\.seriesppn','1740229983')
+    set_field('collection_handle','11159/2290')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 18')
-    set_field('relation\.seriesppn','1740230590')
+    set_field('collection_handle','11159/141')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 19')
-    set_field('relation\.seriesppn','1740231120')
+    set_field('collection_handle','11159/3440')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 20')
-    set_field('relation\.seriesppn','1740231724')
+    set_field('collection_handle','11159/2890')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 21')
-    set_field('relation\.seriesppn','1740232453')
+    set_field('collection_handle','11159/2918')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 22')
-    set_field('relation\.seriesppn','176098941X')
+    set_field('collection_handle','11159/5383')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 23')
-    set_field('relation\.seriesppn','1817888560')
+    set_field('collection_handle','11159/12240')
   end
 end
 
