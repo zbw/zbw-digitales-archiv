@@ -118,8 +118,18 @@ end
 marc_map('008/07-10','date\.issued')
 
 # ISSN
+# if LDR 07 = m then map from 810/830 $x
+# elsif 773 $7 = |||s then map from 773[08]x
 # Multiple ISSN are separated from each other with "|"
-marc_map('773[08]x','relation\.issn', join:'|')
+if marc_any_match('LDR/7','m')
+  if marc_has('810')
+    marc_map('810x','relation\.issn', join:'|')
+  elsif marc_has('830')
+    marc_map('810x','relation\.issn', join:'|')
+  end
+elsif marc_match('7737|||s','s')
+  marc_map('773[08]x','relation\.issn', join:'|')
+end
 
 # ISBN
 # Multiple ISBN are separated from each other with "|"
@@ -225,13 +235,27 @@ if all_match('type','bp')
   marc_map('773[08]b','description\.version')
 end
 
-# Series id
-if marc_has('810')
-  marc_map('810w','relation\.seriesppn',join:'|')
+# Series PPN id
+# only for target owc-de-206
+if all_match('target','owc-de-206')
+  do marc_each()
+    if marc_has('810')
+      if marc_any_match('810w','(DE-627)')
+        marc_replace_all('810w','^((?!DE-627).)*$','')
+        marc_replace_all('810w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
+        marc_map('810w','relation\.seriesppn.$append')
+      end
+    elsif marc_has('830')
+      if marc_any_match('830w','(DE-627)')
+        marc_replace_all('830w','^((?!DE-627).)*$','')
+        marc_replace_all('830w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
+        marc_map('830w','relation\.seriesppn.$append')
+      end
+    end
+  end
 end
-if marc_has('830')
-  marc_map('830w','relation\.seriesppn',join:'|')
-end
+join_field('relation\.seriesppn','|')
+
 
 # Series name
 # marc_map('490a','relation\.ispartofseries',join:'. ')
@@ -243,12 +267,18 @@ join_field('relation\.ispartofseries','|')
 # Abstract
 marc_map('520a','description\.abstract')
 
-# Book id
-do marc_each()
-  if marc_match('7737|||m','m')
-    marc_map('773w','relation\.bookppn',join:'|')
+# Book PPN id
+# only for target owc-de-206
+if all_match('target','owc-de-206')
+  do marc_each()
+    if marc_any_match('7737|||m','m')
+      marc_replace_all('773w','^((?!DE-627).)*$','')
+      marc_replace_all('773w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
+      marc_map('773w','relation\.bookppn.$append')
+    end
   end
 end
+join_field('relation\.bookppn','|')
 
 # Book name
 do marc_each()
@@ -257,12 +287,29 @@ do marc_each()
   end
 end
 
-# Journal id
+# Journal PPN id
+# only for target owc-de-206 and nl-zeitschriften
 do marc_each()
-  if marc_match('7737|||s','s')
-    marc_map('773w','relation\.journalppn',join:'|')
+  if all_match('target','owc-de-206')
+    if marc_match('7737|||s','s')
+      if marc_any_match('773w','(DE-627)')
+        marc_replace_all('773w','^((?!DE-627).)*$','')
+        marc_replace_all('773w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
+        marc_map('773w','relation\.journalppn.$append')
+      end
+    end
+  elsif all_match('target','nl-zeitschriften')
+    if marc_any_match('7737|||s','s')
+      if marc_any_match('773w','(DE-627)')
+        marc_replace_all('773w','^((?!DE-627).)*$','')
+        marc_replace_all('773w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
+        marc_map('773w','relation\.journalppn.$append')
+        prepend('relation\.journalppn','NLZ')
+      end
+    end
   end
 end
+join_field('relation\.journalppn','|')
 
 # Journal name
 do marc_each()
@@ -277,10 +324,11 @@ do marc_each()
     if marc_any_match('773w','(DE-600)')
       marc_replace_all('773w','^((?!DE-600).)*$','')
       marc_replace_all('773w','^(\(DE-600\))(\d{7}-[\dxX]{1}$)','$2')
-      marc_map('773w','relation\.journalzdbid')
+      marc_map('773w','relation\.journalzdbid.$append')
     end
   end
 end
+join_field('relation\.journalzdbid','|')
 
 # ZDB id for series
 do marc_each()
@@ -294,107 +342,107 @@ end
 # Map callnumbers to Lax record PPNs
 do marc_each()
   if marc_any_match('980d','ZSM 1')
-    set_field('relation\.seriesppn','(DE-627)1730492479')
+    set_field('relation\.seriesppn','1730492479')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 3')
-    set_field('relation\.seriesppn','(DE-627)1730497268')
+    set_field('relation\.seriesppn','1730497268')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 4')
-    set_field('relation\.seriesppn','(DE-627)1730499090')
+    set_field('relation\.seriesppn','1730499090')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 6')
-    set_field('relation\.seriesppn','(DE-627)1735350516')
+    set_field('relation\.seriesppn','1735350516')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 7')
-    set_field('relation\.seriesppn','(DE-627)1738745007')
+    set_field('relation\.seriesppn','1738745007')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 8')
-    set_field('relation\.seriesppn','(DE-627)1740221109')
+    set_field('relation\.seriesppn','1740221109')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 9')
-    set_field('relation\.seriesppn','(DE-627)1740222571')
+    set_field('relation\.seriesppn','1740222571')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 10')
-    set_field('relation\.seriesppn','(DE-627)1740223195')
+    set_field('relation\.seriesppn','1740223195')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 11')
-    set_field('relation\.seriesppn','(DE-627)1740224299')
+    set_field('relation\.seriesppn','1740224299')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 12')
-    set_field('relation\.seriesppn','(DE-627)1740225600')
+    set_field('relation\.seriesppn','1740225600')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 13')
-    set_field('relation\.seriesppn','(DE-627)1740226062')
+    set_field('relation\.seriesppn','1740226062')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 14')
-    set_field('relation\.seriesppn','(DE-627)1740227018')
+    set_field('relation\.seriesppn','1740227018')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 15')
-    set_field('relation\.seriesppn','(DE-627)1740227549')
+    set_field('relation\.seriesppn','1740227549')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 16')
-    set_field('relation\.seriesppn','(DE-627)1740229053')
+    set_field('relation\.seriesppn','1740229053')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 17')
-    set_field('relation\.seriesppn','(DE-627)1740229983')
+    set_field('relation\.seriesppn','1740229983')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 18')
-    set_field('relation\.seriesppn','(DE-627)1740230590')
+    set_field('relation\.seriesppn','1740230590')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 19')
-    set_field('relation\.seriesppn','(DE-627)1740231120')
+    set_field('relation\.seriesppn','1740231120')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 20')
-    set_field('relation\.seriesppn','(DE-627)1740231724')
+    set_field('relation\.seriesppn','1740231724')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 21')
-    set_field('relation\.seriesppn','(DE-627)1740232453')
+    set_field('relation\.seriesppn','1740232453')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 22')
-    set_field('relation\.seriesppn','(DE-627)176098941X')
+    set_field('relation\.seriesppn','176098941X')
   end
 end
 do marc_each()
   if marc_any_match('980d','ZSM 23')
-    set_field('relation\.seriesppn','(DE-627)1817888560')
+    set_field('relation\.seriesppn','1817888560')
   end
 end
 
