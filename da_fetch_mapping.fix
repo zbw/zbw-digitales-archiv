@@ -315,7 +315,7 @@ join_field('relation\.journalppn','|')
 do marc_each()
   if marc_match('7737|||s','s')
     marc_map('773t','relation\.ispartofjournal',join:'|')
-  elsif any_match('type','c')
+  elsif any_match('type','^c$')
     marc_map('245ap','relation\.ispartofjournal',join:'. ')
   end
 end
