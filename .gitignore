@@ -1,2 +1,4 @@
 # ignore archive directory
 archive/
+da_fetch_mapping_rechteinformationen.fix
+da_fetch_rechteinformationen.sh
