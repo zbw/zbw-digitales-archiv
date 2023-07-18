@@ -10,7 +10,7 @@ if all_match('target','owc-de-206')
   # For PPN from owc-de-206
   marc_map('001','identifier\.ppn')
 elsif all_match('target','k10plus')
-  # For PPN from E-Book-Pool
+  # For PPN from K10plus
   marc_map('001','identifier\.ppn')
 elsif all_match('target','ebooks')
   # For PPN from E-Book-Pool
