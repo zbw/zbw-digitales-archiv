@@ -482,15 +482,19 @@ end
 # Dependent on ISIL a value is written into 
 # "collection_handle",
 # the ISIL is extracted and written into "identifier.packageid",
-# and the fixed value "wp" is written into "type"
+# and sometimes a fixed value written into "type"
 if all_match('isil','zdb-33')
   # If ISIL = zdb-33
-  marc_map('912a','identifier\.packageid', join:'|')
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
   set_field('collection_handle','11159/6526')
   set_field('type','wp')
-#elsif all_match('isil','???')
-  # PLACEHOLDER
-  # If ISIL = 
+elsif all_match('isil','zdb-1-eem')
+  # If ISIL = zdb-1-eem
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
 #  set_field('identifier\.packageid','')
 #elsif all_match('isil','???')
   # PLACEHOLDER
