@@ -52,8 +52,8 @@ elif [[ $target = "nl-zeitschriften" ]] ; then
   echo -e "Daten werden aus Target \"nl-zeitschriften\" abgezogen."
 fi
 
-if [[ $isil = "zdb-33-sfen" ]] ; then
-  echo -e "Wert in Spalte identifier.packageid = \"ZDB-33-SFEN\""
+if [[ $isil ]] ; then
+  echo -e "Das Sigel \"${isil}\" wurde angegeben."
 fi
 
 echo -e "Datei \"$file\" wird verarbeitet."
