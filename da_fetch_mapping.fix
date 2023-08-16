@@ -258,14 +258,17 @@ join_field('relation\.seriesppn','|')
 
 
 # Series name
-# marc_map('490a','relation\.ispartofseries',join:'. ')
-do marc_each()
-  marc_map('490a','relation\.ispartofseries.$append')
-end
+marc_map('490a','relation\.ispartofseries',join:'. ')
+#do marc_each()
+#  marc_map('490a','relation\.ispartofseries.$append')
+#end
 join_field('relation\.ispartofseries','|')
 
 # Abstract
-marc_map('520a','description\.abstract')
+do marc_each()
+  marc_map('520a','description\.abstract')
+end
+join_field('description\.abstract','|')
 
 # Book PPN id
 # only for target owc-de-206
@@ -488,7 +491,7 @@ if all_match('isil','zdb-33')
   marc_map('912ab','identifier\.packageid.$append')
   join_field('identifier\.packageid','|')
   replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
-  set_field('collection_handle','11159/6526')
+  set_field('collection_handle','11159/6527')
   set_field('type','wp')
 elsif all_match('isil','zdb-1-eem')
   # If ISIL = zdb-1-eem
