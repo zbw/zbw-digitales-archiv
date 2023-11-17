@@ -275,6 +275,7 @@ join_field('description\.abstract','|')
 if all_match('target','owc-de-206')
   do marc_each()
     if marc_any_match('7737|||m','m')
+      #marc_map('773w','773wFixed')
       marc_replace_all('773w','^((?!DE-627).)*$','')
       marc_replace_all('773w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
       marc_map('773w','relation\.bookppn.$append')
@@ -294,8 +295,9 @@ end
 # only for target owc-de-206 and nl-zeitschriften
 do marc_each()
   if all_match('target','owc-de-206')
-    if marc_match('7737|||s','s')
+    if marc_any_match('7737|||s','s')
       if marc_any_match('773w','(DE-627)')
+        #marc_map('773w','773wFixed2')
         marc_replace_all('773w','^((?!DE-627).)*$','')
         marc_replace_all('773w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
         marc_map('773w','relation\.journalppn.$append')
@@ -304,6 +306,7 @@ do marc_each()
   elsif all_match('target','nl-zeitschriften')
     if marc_any_match('7737|||s','s')
       if marc_any_match('773w','(DE-627)')
+        #marc_map('773w','773wFixed2')
         marc_replace_all('773w','^((?!DE-627).)*$','')
         marc_replace_all('773w','^(\(DE-627\))(\d{8,9}[\dxX]{1}$)','$2')
         marc_map('773w','relation\.journalppn.$append')
@@ -327,6 +330,7 @@ end
 do marc_each()
   if marc_any_match('7737|||s','s')
     if marc_any_match('773w','(DE-600)')
+      #marc_map('773w','773wFixed3')
       marc_replace_all('773w','^((?!DE-600).)*$','')
       marc_replace_all('773w','^(\(DE-600\))(\d{7}-[\dxX]{1}$)','$2')
       marc_map('773w','relation\.journalzdbid.$append')
@@ -343,6 +347,16 @@ do marc_each()
     marc_map('810w','relation\.serieszdbid')
   end
 end
+
+# ZDB id for series
+do marc_each()
+  if marc_any_match('830w','(DE-600)')
+    marc_replace_all('830w','^((?!DE-600).)*$','')
+    marc_replace_all('830w','^(\(DE-600\))(\d{7}-[\dxX]{1}$)','$2')
+    marc_map('830w','relation\.serieszdbid')
+  end
+end
+
 
 # Map callnumbers to Lax record PPNs
 do marc_each()
