@@ -305,8 +305,8 @@ do list(path:tmp,var:c)
       copy_field(c,'relation\.journalppn.$append')
     elsif all_match('target','nl-zeitschriften')
       replace_all(c,'^\([^\)]+\)(.*)$','$1')
+      prepend('c','NLZ')
       copy_field(c,'relation\.journalppn.$append')
-      prepend('relation\.journalppn','NLZ')
     end
   end
   # ZDB ID (for all targets)
