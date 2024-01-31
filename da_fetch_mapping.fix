@@ -373,7 +373,7 @@ remove_field(tmp)
 # Map callnumbers to Lax record PPNs
 do marc_each()
   if marc_any_match('980d','ZSM 1')
-    set_field('collection_handle','11159/208')
+    set_field('collection_handle','11159/536')
   end
 end
 do marc_each()
