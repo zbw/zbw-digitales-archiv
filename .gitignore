@@ -1,4 +1,9 @@
-# ignore archive directory
 archive/
 da_fetch_mapping_license_data.fix
 da_fetch_license_data.sh
+rest_api/output.tsv
+rest_api/search_results.json
+rest_api/ppns_prod.txt
+rest_api/ppns_test.txt
+rest_api/user
+rest_api/token
