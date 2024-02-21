@@ -51,4 +51,4 @@ fi
 printf "id\tdc.identifier.ppn\n" >> "$tsv_file"
 jq -r '.[] | [.id, (.metadata[] | select(.key == "dc.identifier.ppn").value)] | @tsv' "$result_file" >> "$tsv_file"
 
-echo "Extrahierung abgeschlossen. Ergebnisse wurden in $tsv_file gespeichert."
+echo "Extraction completed. Results were saved in $tsv_file."
