@@ -47,7 +47,7 @@ For example
 
 The script will iterate over the list of PPN's and make requests to the `find-by-metadata-field` API using the option `?expand=metadata`. The response is written to a file `search_results.json`.
 
-After that, jq will extract the ID and PPN and write it to a file `output.tsv`. This file has to columns, delimited by tab.
+After that, jq will extract the ID and PPN and write it to a file `output.tsv`. This file has two columns (id, dc.identifier.ppn), delimited by tab.
 
 ## Planned development
 
