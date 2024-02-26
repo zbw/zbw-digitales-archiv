@@ -12,11 +12,11 @@ For a list of available endpoints, see [this page](https://zbw.eu/econis-archiv/
 
 ### Authentication
 
-#### Testsystem
+#### Test system
 
 A user name and password are required to access the test system. These credentials must be saved in a file with filenam `user` in the form `username:password`.
 
-#### Produktivsystem
+#### Productive system
 
 A token is required for access to the production system. This token can be requested by POST via the endpoint `/rest/login` by sending the following body:
 
@@ -26,6 +26,8 @@ A token is required for access to the production system. This token can be reque
     "password":"<your_password>"
 }
 ```
+
+Set the following request header: `Content-Type:application/json`
 
 This token must be saved in a file with filename `token`.
 
