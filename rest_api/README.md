@@ -49,6 +49,11 @@ The script will iterate over the list of PPN's and make requests to the `find-by
 
 After that, jq will extract the ID and PPN and write it to a file `output.tsv`. This file has two columns (id, dc.identifier.ppn), delimited by tab.
 
+## Important notes for PPN file
+
+- The PPN file has to use UNIX line breaks.
+- No BOM allowed in the PPN file. See [Byte Order Mark Wikipedia page](https://de.wikipedia.org/wiki/Byte_Order_Mark) for details.
+
 ## Planned development
 
 - Investigate other API's
