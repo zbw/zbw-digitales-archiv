@@ -5,5 +5,6 @@ rest_api/output.tsv
 rest_api/search_results.json
 rest_api/ppns_prod.txt
 rest_api/ppns_test.txt
+rest_api/handle_from_search_results.txt
 rest_api/user
 rest_api/token
