@@ -6,6 +6,9 @@
 add_field('target','{{target}}')
 add_field('isil','{{isil}}')
 
+# Add download method and default to selen
+add_field('download_method','selen')
+
 if all_match('target','owc-de-206')
   # For PPN from owc-de-206
   marc_map('001','identifier\.ppn')
