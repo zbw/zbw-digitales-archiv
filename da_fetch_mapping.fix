@@ -479,6 +479,11 @@ do marc_each()
     set_field('collection_handle','11159/12240')
   end
 end
+do marc_each()
+  if marc_any_match('980d','ZSM 24')
+    set_field('collection_handle','11159/654471')
+  end
+end
 
 # Everything with 8600 DA:oas
 do marc_each()
