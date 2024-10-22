@@ -257,7 +257,14 @@ join_field('description\.abstract','|')
 
 # 773 BOOK cases
 
-# Book name
+# Book name (Book Parts)
+do marc_each()
+if all_match('type','bp')
+    marc_map('773t','relation\.ispartofbook',join:'|')
+  end
+end
+
+# Book name (Books)
 do marc_each()
   if marc_match('7737|||m','m')
     marc_map('773t','relation\.ispartofbook',join:'|')
@@ -532,26 +539,49 @@ elsif all_match('isil','zdb-1-eem')
   marc_map('912ab','identifier\.packageid.$append')
   join_field('identifier\.packageid','|')
   replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
-#  set_field('identifier\.packageid','')
+  # set_field('identifier\.packageid','')
 set_field('collection_handle','11159/8695')
 elsif all_match('isil','zdb-30-pdt')
   marc_map('912ab','identifier\.packageid.$append')
   join_field('identifier\.packageid','|')
   replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
-#  set_field('identifier\.packageid','')
-set_field('collection_handle','11159/12451')
-set_field('type','t')
+  # set_field('identifier\.packageid','')
+  set_field('collection_handle','11159/12451')
+  set_field('type','t')
 elsif all_match('isil','zdb-1-wba')
   # If ISIL = zdb-1-wba
   marc_map('912ab','identifier\.packageid.$append')
   join_field('identifier\.packageid','|')
   replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
-#  set_field('identifier\.packageid','')
-set_field('collection_handle','11159/632042')
+  # set_field('identifier\.packageid','')
+  set_field('collection_handle','11159/632042')
+elsif all_match('isil','zdb-1-bmen')
+  # If ISIL = zdb-1-bmen
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
+  # set_field('identifier\.packageid','')
+  set_field('collection_handle','11159/654928')
+elsif any_match('isil','zdb-23-gbe')
+  # If ISIL = zdb-23-gbe
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  replace_all('identifier\.packageid','(ZDB-\d+-[A-Za-z]+)(\d{4}(?:-\d{4})?)','$1 ($2)')
+  replace_all('identifier\.packageid', '\((\d{4})\)', '($1)')
+  # set_field('identifier\.packageid','')
+  set_field('collection_handle','11159/654929')
+elsif all_match('isil','zbw-1-dgw')
+  # If ISIL = zbw-1-dgw
+  set_field('identifier\.packageid','ZBW-1-DGW')
+  set_field('collection_handle','11159/654929')
+elsif all_match('isil','zbw-1-dgl')
+  # If ISIL = zbw-1-dgl
+  set_field('identifier\.packageid','ZBW-1-DGL')
+  set_field('collection_handle','11159/654929')
 #elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
-#  set_field('identifier\.packageid','')
+# set_field('identifier\.packageid','')
 end
 
 # URL
@@ -591,6 +621,55 @@ if all_match('isil','zdb-1-eem')
         append('filepath','.pdf') 
 end
 
+# Extract Emerald DOI from 024a and use for value in "filepath"
+if all_match('isil','zdb-1-bmen')
+  do marc_each()
+    if marc_match('024[7]2','doi')
+      marc_replace_all('024[7]a','10.1016\/|10.1108\/','')
+      marc_replace_all('024[7]a', '\(|\)', '_')
+      marc_replace_all('024[7]a', 'S', 's')
+      marc_map('024[7]a','filepath')
+      prepend('filepath','//zbw/metadaten/Work/ZDB-1-EPB_und_ZDB-1-BMEN/upload/')
+      append('filepath','.pdf') 
+    end
+  end
+end
+
+# Extract De Gruyter (Standardpaket) DOI from 024a and use for value in "filepath"
+if all_match('isil','zdb-23-gbe')
+  do marc_each()
+    if marc_match('024[7]2','doi')
+      marc_replace_all('024[7]a', '\/', '_')
+      marc_map('024[7]a','filepath')
+      prepend('filepath','//zbw/metadaten/Work/ZBW-1-DGW_und_ZDB-23-GBE/upload/')
+      append('filepath','.pdf') 
+    end
+  end
+end
+
+# Extract De Gruyter (Individualpaket bis 2023) DOI from 024a and use for value in "filepath"
+if all_match('isil','zdb-1-dgw')
+  do marc_each()
+    if marc_match('024[7]2','doi')
+      marc_replace_all('024[7]a', '\/', '_')
+      marc_map('024[7]a','filepath')
+      prepend('filepath','//zbw/metadaten/Work/ZBW-1-DGW_und_ZDB-23-GBE/upload/')
+      append('filepath','.pdf') 
+    end
+  end
+end
+
+# Extract De Gruyter (Individualpaket ab 2024) DOI from 024a and use for value in "filepath"
+if all_match('isil','zdb-1-dgl')
+  do marc_each()
+    if marc_match('024[7]2','doi')
+      marc_replace_all('024[7]a', '\/', '_')
+      marc_map('024[7]a','filepath')
+      prepend('filepath','//zbw/metadaten/Work/ZBW-1-DGW_und_ZDB-23-GBE/upload/')
+      append('filepath','.pdf') 
+    end
+  end
+end
 
 # DDC and keywords were to be included in the schema, but subsequently it was decided,
 # not to fill the fields. Therefore they are created empty as placeholders.
