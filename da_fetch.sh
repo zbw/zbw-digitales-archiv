@@ -8,12 +8,14 @@ fileUnix="${file}.unix.txt"
 defaultTarget="owc-de-206"
 target="${2:-$defaultTarget}"
 isil=${3}
-format="marcxml-solr"
+default_format="marcxml-solr"
+format="${4:-$default_format}"
 
 display_usage() {
-    echo -e "\nDas Programm erwartet drei Argumente beim Aufruf:\n./da_fetch.sh [Dateiname] [Target] [ISIL]\\n
+    echo -e "\nDas Programm erwartet beim Aufruf 4 Argumente:\n./da_fetch.sh [Dateiname] [Target] [ISIL] [Format]\\n
 Sofern kein Target angegeben wird, werden die Daten aus owc-de-206 abgezogen.\\n
-Sofern kein ISIL angegeben wird, bleibt die Spalte identifier.packageid leer.\n"
+Sofern kein ISIL angegeben wird, bleibt die Spalte identifier.packageid leer.\\n
+Sofern kein Format angegeben wird, werden die Daten im Format marcxml-solr abgezogen.\n"
 }
 
 display_targets() {
@@ -25,11 +27,18 @@ display_targets() {
 - nl-zeitschriften (Datenbank 1.55)\n"
 }
 
+display_formats() {
+  echo -e "Folgende Formate sind verfügbar:\n\
+- marcxml\n\
+- marcxml-solr\n"
+}
+
 # Check on arguments
 if [[ $# -eq 0 ]] ; then
   echo -e "\nFEHLER: Kein Dateiname angegeben."
   display_usage
   display_targets
+  display_formats
   exit 1
 fi
 
@@ -54,6 +63,19 @@ fi
 
 if [[ $isil ]] ; then
   echo -e "Das Sigel \"${isil}\" wurde angegeben."
+fi
+
+# Validate format argument
+if [[ $format != "marcxml" && $format != "marcxml-solr" ]] ; then
+  echo -e "Ungültiges Format.\n"
+  display_formats
+  exit 1
+fi
+
+if [[ $format = "marcxml" ]] ; then
+  echo -e "Daten werden im Format \"marcxml\" abgezogen."
+elif [[ $format = "marcxml-solr" ]] ; then
+  echo -e "Daten werden im Format \"marcxml-solr\" abgezogen."
 fi
 
 echo -e "Datei \"$file\" wird verarbeitet."
