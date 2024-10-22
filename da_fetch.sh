@@ -4,9 +4,9 @@ shopt -s nocasematch;
 
 # Variables
 file=${1}
-fileUnix="${file}.unix.txt"
-defaultTarget="owc-de-206"
-target="${2:-$defaultTarget}"
+file_unix="${file}.unix.txt"
+default_target="owc-de-206"
+target="${2:-$default_target}"
 isil=${3}
 default_format="marcxml-solr"
 format="${4:-$default_format}"
@@ -80,12 +80,12 @@ fi
 
 echo -e "Datei \"$file\" wird verarbeitet."
 
-awk '{ sub("\r$", ""); print }' < "${1}" > "${fileUnix}"
+awk '{ sub("\r$", ""); print }' < "${1}" > "${file_unix}"
 
 echo -e "Bitte warten. Datensätze werden heruntergeladen."
 
 # Schnittstelleninformationen
-< "${fileUnix}" xargs -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${format}" > records.xml
+< "${file_unix}" xargs -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${format}" > records.xml
 
 if [[ -s records.xml ]]
 then
@@ -111,11 +111,11 @@ else
   exit 1
 fi
 
-ppnDir="archive/ppns"
-recordsDir="archive/records"
+ppn_dir="archive/ppns"
+records_dir="archive/records"
 
-[ ! -d "$ppnDir" ] && mkdir -p "$ppnDir"
-[ ! -d "$recordsDir" ] && mkdir -p "$recordsDir"
+[ ! -d "$ppn_dir" ] && mkdir -p "$ppn_dir"
+[ ! -d "$records_dir" ] && mkdir -p "$records_dir"
 
 mv ./*.txt archive/ppns
 mv records-* archive/records
