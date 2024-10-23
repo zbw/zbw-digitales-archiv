@@ -661,14 +661,11 @@ end
 
 # Extract De Gruyter (Individualpaket ab 2024) DOI from 024a and use for value in "filepath"
 if all_match('isil','zdb-1-dgl')
-  do marc_each()
-    if marc_match('024[7]2','doi')
-      marc_replace_all('024[7]a', '\/', '_')
-      marc_map('024[7]a','filepath')
+do marc_each()
+set_field('filepath','identifier\.pi')
       prepend('filepath','//zbw/metadaten/Work/ZBW-1-DGW_und_ZDB-23-GBE/upload/')
       append('filepath','.pdf') 
-    end
-  end
+end
 end
 
 # DDC and keywords were to be included in the schema, but subsequently it was decided,
