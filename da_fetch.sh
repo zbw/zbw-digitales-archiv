@@ -3,89 +3,104 @@
 shopt -s nocasematch;
 
 # Variables
-file=${1}
-file_unix="${file}.unix.txt"
-default_target="owc-de-206"
-target="${2:-$default_target}"
-isil=${3}
-default_format="marcxml-solr"
-format="${4:-$default_format}"
+target="owc-de-206"
+schema="marcxml-solr"
 
 display_usage() {
-    echo -e "\nDas Programm erwartet beim Aufruf 4 Argumente:\n./da_fetch.sh [Dateiname] [Target] [ISIL] [Format]\\n
-Sofern kein Target angegeben wird, werden die Daten aus owc-de-206 abgezogen.\\n
-Sofern kein ISIL angegeben wird, bleibt die Spalte identifier.packageid leer.\\n
-Sofern kein Format angegeben wird, werden die Daten im Format marcxml-solr abgezogen.\n"
+  echo "Usage: $0 [OPTIONS]"
+  echo
+  echo "Beschreibung:"
+  echo "  Dieses Script liest eine Datei mit PPNs ein, lädt die bibliografischen Metadaten"
+  echo "  und Exemplardaten per SRU herunter und konvertiert die Daten in eine CSV-Datei,"
+  echo "  die von bulkzip weiterverarbeitet werden kann."
+  echo
+  echo "Optionen:"
+  echo "  -f, --file <DATEI>          Angabe der Eingabedatei mit den PPNs."
+  echo
+  echo "  -t, --target <Datenbank>    Auswahl der PICA-Datenbank. Verfügbare Optionen:"
+  echo "                              - owc-de-206 (Arbeitskatalog der ZBW)"
+  echo "                              - k10plus (Datenbank 1.1)"
+  echo "                              - ebooks (Datenbank 1.2)"
+  echo "                              - nl-monographien (Datenbank 1.50)"
+  echo "                              - nl-zeitschriften (Datenbank 1.55)"
+  echo "                              Standard: owc-de-206"
+  echo
+  echo "  -i, --isil <ISIL>           Angabe eines ISIL (optional)."
+  echo "                              Sofern kein ISIL angegeben wird, bleibt die Spalte"
+  echo "                              identifier.packageid leer."
+  echo
+  echo "  -s, --schema <FORMAT>       Angabe des Formats. Verfügbare Optionen:"
+  echo "                              - marcxml"
+  echo "                              - marcxml-solr"
+  echo "                              Standard: marcxml-solr"
+  echo
+  echo "  -h, --help                  Anzeige des Hilfemenü."
 }
 
-display_targets() {
-  echo -e "Folgende Targets sind verfügbar:\n\
-- owc-de-206 (Arbeitskatalog der ZBW)\n\
-- k10plus (Datenbank 1.1)\n\
-- ebooks (Datenbank 1.2)\n\
-- nl-monographien (Datenbank 1.50)\n\
-- nl-zeitschriften (Datenbank 1.55)\n"
-}
+# Use getopt to parse short and long arguments
+PARSED=$(getopt -o f:t:i:s:h --long format:,output:,verbose,help -- "$@")
+if [[ $? -ne 0 ]]; then
+    exit 1
+fi
 
-display_formats() {
-  echo -e "Folgende Formate sind verfügbar:\n\
-- marcxml\n\
-- marcxml-solr\n"
-}
+# Reset the options parsed by getopt back to $@
+eval set -- "$PARSED"
 
-# Check on arguments
-if [[ $# -eq 0 ]] ; then
-  echo -e "\nFEHLER: Kein Dateiname angegeben."
-  display_usage
-  display_targets
-  display_formats
+# Parse arguments
+while true; do
+  case "$1" in
+    -f|--file)
+      file="$2"
+      shift 2
+      ;;
+    -t|--target)
+      target="$2"
+      shift 2
+      ;;
+    -i|--isil)
+      isil="$2"
+      shift 2
+      ;;
+    -s|--schema)
+      schema="$2"
+      shift 2
+      ;;
+    -h|--help)
+      display_usage
+      exit 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    *)
+      echo "Ungültige Option: $1"
+      exit 1
+      ;;
+  esac
+done
+
+# Check if a file has been provided
+if [[ -z "$file" ]]; then
+  echo "Keine Eingabedatei angegeben!"
   exit 1
 fi
 
-# Validate target argument
-if [[ $target != "owc-de-206" && $target != "k10plus" && $target != "ebooks" && $target != "nl-monographien" && $target != "nl-zeitschriften" ]] ; then
-  echo -e "Ungültiges Target.\n"
-  display_targets
-  exit 1
-fi
+file_unix="${file}.unix.txt"
 
-if [[ $target = "owc-de-206" ]] ; then
-  echo -e "Daten werden aus Target \"owc-de-206\" abgezogen."
-elif [[ $target = "k10plus" ]] ; then
-  echo -e "Daten werden aus Target \"k10plus\" abgezogen."
-elif [[ $target = "ebooks" ]] ; then
-  echo -e "Daten werden aus Target \"ebooks\" abgezogen."
-elif [[ $target = "nl-monographien" ]] ; then
-  echo -e "Daten werden aus Target \"nl-monographien\" abgezogen."
-elif [[ $target = "nl-zeitschriften" ]] ; then
-  echo -e "Daten werden aus Target \"nl-zeitschriften\" abgezogen."
-fi
-
-if [[ $isil ]] ; then
-  echo -e "Das Sigel \"${isil}\" wurde angegeben."
-fi
-
-# Validate format argument
-if [[ $format != "marcxml" && $format != "marcxml-solr" ]] ; then
-  echo -e "Ungültiges Format.\n"
-  display_formats
-  exit 1
-fi
-
-if [[ $format = "marcxml" ]] ; then
-  echo -e "Daten werden im Format \"marcxml\" abgezogen."
-elif [[ $format = "marcxml-solr" ]] ; then
-  echo -e "Daten werden im Format \"marcxml-solr\" abgezogen."
-fi
+echo "File: $file"
+echo "Database: $target"
+echo "ISIL: $isil"
+echo "Format: $schema"
 
 echo -e "Datei \"$file\" wird verarbeitet."
 
-awk '{ sub("\r$", ""); print }' < "${1}" > "${file_unix}"
+awk '{ sub("\r$", ""); print }' < "${file}" > "${file_unix}"
 
 echo -e "Bitte warten. Datensätze werden heruntergeladen."
 
 # Schnittstelleninformationen
-< "${file_unix}" xargs -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${format}" > records.xml
+< "${file_unix}" xargs -i curl -s "http://unapi.k10plus.de/?id=${target}:ppn:{}&format=${schema}" > records.xml
 
 if [[ -s records.xml ]]
 then
@@ -101,9 +116,9 @@ catmandu convert MARC --type XML to CSV --fix da_fetch_mapping.fix --fields iden
 title.alternative,identifier.isbn,relation.issn,relation.journalzdbid,relation.serieszdbid,contributor.author,contributor.editor,contributor.other,identifier,\
 identifier.pi,rights.license,publisher,language.iso,subject.jel,description.version,relation.ispartofseries,relation.seriesppn,\
 relation.ispartofjournal,relation.journalppn,relation.ispartofbook,relation.bookppn,econstor.citation.volume,econstor.citation.issue,econstor.citation.articlenumber,\
-econstor.citation.startpage,econstor.citation.endpage,url,collection_handle,identifier.packageid,filepath,description.abstract,subject.ddc,subject.keyword,download_method --var target="${target}" --var isil="${isil}" --sep_char '\t' < records.xml > records-"${1}".csv
+econstor.citation.startpage,econstor.citation.endpage,url,collection_handle,identifier.packageid,filepath,description.abstract,subject.ddc,subject.keyword,download_method --var target="${target}" --var isil="${isil}" --sep_char '\t' < records.xml > records-"${file}".csv
 
-if [[ -s records-${1}.csv ]]
+if [[ -s records-${file}.csv ]]
 then
   echo -e "Konvertierung erfolgreich.";
 else
@@ -117,7 +132,8 @@ records_dir="archive/records"
 [ ! -d "$ppn_dir" ] && mkdir -p "$ppn_dir"
 [ ! -d "$records_dir" ] && mkdir -p "$records_dir"
 
-mv ./*.txt archive/ppns
-mv records-* archive/records
+mv -f ${file} archive/ppns
+mv -f ${file_unix} archive/ppns
+mv -f records-"${file}".csv archive/records
 
 rm records.xml
