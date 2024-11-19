@@ -29,8 +29,8 @@ The program accepts the following options:
 
 | Option                      | Description                                             | Default value           |
 |-----------------------------|---------------------------------------------------------|-------------------------|
-| `-f, --file <FILE>`        | Specification of the input file with the PPNs.          |                         |
-| `-t, --target <DATABASE>`   | Selection of the PICA database. Available options:      | `owc-de-206`            |
+| `-f, --file <FILE>`         | Specification of the input file with the PPNs.          |                         |
+| `-t, --target <DATABASE>`   | Specification of the PICA database. Available options:  | `owc-de-206`            |
 |                             | - `owc-de-206` (ZBW work catalog)                       |                         |
 |                             | - `k10plus` (Database 1.1)                              |                         |
 |                             | - `ebooks` (Database 1.2)                               |                         |
