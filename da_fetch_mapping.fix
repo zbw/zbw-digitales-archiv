@@ -493,7 +493,12 @@ do marc_each()
 end
 do marc_each()
   if marc_any_match('980d','ZSM 25')
-    set_field('collection_handle','11159/701917 ')
+    set_field('collection_handle','11159/701917')
+  end
+end
+do marc_each()
+  if marc_any_match('980d','ZSM 26')
+    set_field('collection_handle','11159/703030')
   end
 end
 
@@ -667,7 +672,7 @@ if all_match('isil','zdb-23-gbe')
 end
 
 # Extract De Gruyter (Individualpaket bis 2023) DOI from 024a and use for value in "filepath"
-if all_match('isil','zdb-1-dgw')
+if all_match('isil','zbw-1-dgw')
   do marc_each()
     if marc_match('024[7]2','doi')
       marc_replace_all('024[7]a', '\/', '_')
@@ -679,12 +684,15 @@ if all_match('isil','zdb-1-dgw')
 end
 
 # Extract De Gruyter (Individualpaket ab 2024) DOI from 024a and use for value in "filepath"
-if all_match('isil','zdb-1-dgl')
-do marc_each()
-set_field('filepath','identifier\.pi')
-      prepend('filepath','//zbw/metadaten/Work/ZBW-1-DGW_und_ZDB-23-GBE/upload/')
+if all_match('isil','zbw-1-dgl')
+  do marc_each()
+    if marc_match('024[7]2','doi')
+      marc_replace_all('024[7]a', '\/', '_')
+      marc_map('024[7]a','filepath')
+      prepend('filepath','//zbw/metadaten/Work/ZBW-1-DGL/upload/')
       append('filepath','.pdf') 
-end
+    end
+  end
 end
 
 # DDC and keywords were to be included in the schema, but subsequently it was decided,
