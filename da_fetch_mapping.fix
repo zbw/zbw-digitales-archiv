@@ -9,6 +9,11 @@ add_field('isil','{{isil}}')
 # Add download method and default to selen
 add_field('download_method','selen')
 
+# Add some empty columns to the default TSV
+add_field('download_browser','')
+add_field('downloadelement_xpath','')
+add_field('downloadelement_cssselect','')
+
 if all_match('target','owc-de-206')
   # For PPN from owc-de-206
   marc_map('001','identifier\.ppn')
@@ -602,6 +607,13 @@ elsif all_match('isil','zdb-110-wbo')
   replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
   # set_field('identifier\.packageid','')
 set_field('collection_handle','11159/701915')
+elsif all_match('isil','zdb-199-wto')
+  # If ISIL = zdb-199-wto
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
+  # set_field('identifier\.packageid','')
+set_field('collection_handle','11159/703031')
 #elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
