@@ -7,14 +7,14 @@ user_file="user"
 search_id_prod() {
     local id="$1"
     local token=$(<"$token_file")
-    local response=$(curl -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "rest-dspace-token: $token" --data "{\"key\":\"dc.identifier.ppn\",\"value\":\"$id\",\"language\":\"en\"}" "https://zbw.eu/econis-archiv/rest/items/find-by-metadata-field?expand=metadata")
+    local response=$(curl -s -X POST -H "Content-Type: application/json" -H "Accept: application/json" -H "rest-dspace-token: $token" --data "{\"key\":\"dc.identifier.ppn\",\"value\":\"$id\",\"language\":\"en\"}" "https://zbw.eu/econis-archiv/rest/items/find-by-metadata-field?expand=metadata")
     echo "$response" >> search_results.json
 }
 
 search_id_test() {
     local id="$1"
     local user=$(<"$user_file")
-    local response=$(curl -X POST --basic -u $user -H "Content-Type: application/json" --data "{\"key\":\"dc.identifier.ppn\",\"value\":\"$id\"}" "https://testdarch.zbw.eu/econis-archiv/rest/items/find-by-metadata-field?expand=metadata")
+    local response=$(curl -s -X POST --basic -u $user -H "Content-Type: application/json" --data "{\"key\":\"dc.identifier.ppn\",\"value\":\"$id\"}" "https://testdarch.zbw.eu/econis-archiv/rest/items/find-by-metadata-field?expand=metadata")
     echo "$response" >> search_results.json
 }
 
