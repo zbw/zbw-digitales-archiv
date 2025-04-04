@@ -14,7 +14,7 @@ For a list of available endpoints, see [this page](https://zbw.eu/econis-archiv/
 
 #### Test system
 
-A user name and password are required to access the test system. These credentials must be saved in a file with filenam `user` in the form `username:password`.
+A user name and password are required to access the test system. These credentials must be saved in a file with filename `user` in the form `username:password`.
 
 #### Productive system
 
