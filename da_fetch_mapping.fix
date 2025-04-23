@@ -188,33 +188,42 @@ end
 # 100 $4 = aut -> contributor.author
 # 700 $4 = aut -> contributor.author
 if marc_match('1004','aut')
-  marc_map('100a','contributor\.author.$append')
+  marc_map('100a','author.$append')
 end
 
 do marc_each()
   if marc_match('7004','aut')
-    marc_map('700a','contributor\.author.$append')
+    marc_map('700a','author.$append')
   end
 end
+replace_all('author.*','^[\'\.-]','')  # replace_all does not work on variables that contain a dot in their name!
+trim(author.*)
+copy_field('author','contributor\.author')
 join_field('contributor\.author','|')
 
 # 700 $4 = edt -> contributor.editor
 do marc_each()
   if marc_match('7004','edt')
-    marc_map('700a','contributor\.editor.$append')
+    marc_map('700a','editor.$append')
   end
 end
+replace_all('editor.*','^[\'\.-]','')  # replace_all does not work on variables that contain a dot in their name!
+trim("editor.*")
+copy_field('editor','contributor\.editor')
 join_field('contributor\.editor','|')
 
 # All other relationship designators map to contributor.other
 do marc_each()
   unless marc_match('7004','(edt|aut)')
-    marc_map('700a','contributor\.other.$append')
+    marc_map('700a','other.$append')
   end
   unless marc_match('1004','aut')
-    marc_map('100a','contributor\.other.$append')
+    marc_map('100a','other.$append')
   end
 end
+replace_all('other.*','^[\'\.-]','')  # replace_all does not work on variables that contain a dot in their name!
+trim("other")
+copy_field('other','contributor\.other')
 join_field('contributor\.other','|')
 
 # Title
