@@ -124,6 +124,10 @@ end
 
 # Date of publication
 marc_map('008/07-10','date\.issued')
+if any_match('date\.issued','\d{2,3}u{1,2}')
+  replace_all('date\.issued','^(\d{2,3})(.*)$','$1 00')
+  replace_all('date\.issued','(\s)','')
+end
 
 # ISSN
 # if LDR 07 = m then map from 810/830 $x
@@ -285,22 +289,21 @@ do marc_each()
   end
 end
 
-# Book PPN
+# Book PPN (Books)
 if all_match('target','owc-de-206')
   if marc_any_match('7737|||m','m')
     marc_map('773w',tmp,split:1)
   end
 end
 
-do list(path:tmp,var:c)
-  if all_match(c,'^\(DE-627\).*')
-    replace_all(c,'^\([^\)]+\)(.*)$','$1')
-    copy_field(c,'relation\.bookppn.$append')
+# Book PPN (Book Parts)
+if all_match('target','ebooks')
+if all_match('type','bp')
+    marc_map('773w','relation\.bookppn')
+	replace_all('relation\.bookppn','^\([^\)]+\)(.*)$','$1')
+	prepend('relation\.bookppn','EBP')
   end
 end
-join_field('relation\.bookppn','|')
-remove_field(tmp)
-
 
 # 773 JOURNAL cases
 
@@ -583,7 +586,7 @@ elsif all_match('isil','zdb-1-bmen')
   # If ISIL = zdb-1-bmen
   marc_map('912ab','identifier\.packageid.$append')
   join_field('identifier\.packageid','|')
-  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
+  replace_all('identifier\.packageid','(ZDB-\d{1,4}-[A-Za-z0-9\-]+)(\d{4})','$1 \($2\)')
   # set_field('identifier\.packageid','')
   set_field('collection_handle','11159/654928')
 elsif any_match('isil','zdb-23-gbe')
