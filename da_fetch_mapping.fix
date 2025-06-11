@@ -635,6 +635,14 @@ end
 # URL
 marc_map('856[4,0]u','url',join: '|')
 
+# URL PDF
+do marc_each()
+  if marc_any_match('856[4,0]q','application/pdf')
+    marc_map('856[4,0]u','url_pdf.$append')
+  end
+end
+join_field('url_pdf','|')
+
 # Extract DOI from 856, transform and write into "identifier.pi"
 do marc_each()
   if marc_any_match('856[40]u','doi\.org.*')
