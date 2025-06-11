@@ -67,21 +67,21 @@ do marc_each()
 end
 
 # Type "Book"
-# 002@ Pos.2 = "a" if 013D $8 not one of
+# 002@ Pos.2 = "a||f||F" if 013D $8 not one of
 # [Konferenzschrift || Bericht || Forschungsbericht || Hochschulschrift]
 do marc_each()
   if marc_match('LDR/7','m')
     unless marc_any_match('655[,7]a','Konferenzschrift')
-      marc_map('LDR/7','type')
+      set_field('type','m')
 	end
 	unless marc_any_match('655[,7]a','Bericht')
-	  marc_map('LDR/7','type')
+	  set_field('type','m')
 	end
 	unless marc_any_match('655[,7]a','Forschungsbericht')
-	  marc_map('LDR/7','type')
+	  set_field('type','m')
 	end
 	unless marc_any_match('655[,7]a','Hochschulschrift')
-      marc_map('LDR/7','type')
+      set_field('type','m')
 	end
   end
 end
@@ -89,8 +89,8 @@ end
 # Type "Periodical Part"
 # 002@ Pos.2 = "v"
 do marc_each()
-  if marc_match('LDR/19','c')
-    marc_map('LDR/19','type')
+  if marc_match('7737|||s','nnas')
+    set_field('type','c')
   end
 end
 
