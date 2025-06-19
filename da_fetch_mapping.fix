@@ -14,6 +14,18 @@ add_field('download_browser','')
 add_field('downloadelement_xpath','')
 add_field('downloadelement_cssselect','')
 
+# Testcase for if/elsif/else statements, added 2025-06-19
+# To enable the output, add a 'test' column in da_fetch.sh.
+#if marc_has('264')
+#  if marc_match('264c','2024')
+#    set_field('test','case1')
+#  elsif marc_match('264c','\[2023\]')
+#    set_field('test','case2')
+#  else
+#    set_field('test','fallback')
+#  end
+#end
+
 if all_match('target','owc-de-206')
   # For PPN from owc-de-206
   marc_map('001','identifier\.ppn')
