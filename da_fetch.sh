@@ -11,7 +11,7 @@ display_usage() {
   echo
   echo "Beschreibung:"
   echo "  Dieses Script liest eine Datei mit PPNs ein, lädt die bibliografischen Metadaten"
-  echo "  und Exemplardaten per SRU herunter und konvertiert die Daten in eine CSV-Datei,"
+  echo "  und Exemplardaten per SRU herunter und konvertiert die Daten in eine TSV-Datei,"
   echo "  die von bulkzip weiterverarbeitet werden kann."
   echo
   echo "Optionen:"
@@ -117,9 +117,9 @@ title.alternative,identifier.isbn,relation.issn,relation.journalzdbid,relation.s
 identifier.pi,rights.license,publisher,language.iso,subject.jel,description.version,relation.ispartofseries,relation.seriesppn,\
 relation.ispartofjournal,relation.journalppn,relation.ispartofbook,relation.bookppn,econstor.citation.volume,econstor.citation.issue,econstor.citation.articlenumber,\
 econstor.citation.startpage,econstor.citation.endpage,url,url_pdf,collection_handle,identifier.packageid,filepath,description.abstract,subject.ddc,subject.keyword,download_method,\
-download_browser,downloadelement_xpath,downloadelement_cssselect  --var target="${target}" --var isil="${isil}" --sep_char '\t' < records.xml > records-"${file}".csv
+download_browser,downloadelement_xpath,downloadelement_cssselect  --var target="${target}" --var isil="${isil}" --sep_char '\t' < records.xml > records-"${file}".tsv
 
-if [[ -s records-${file}.csv ]]
+if [[ -s records-${file}.tsv ]]
 then
   echo -e "Konvertierung erfolgreich.";
 else
@@ -135,6 +135,6 @@ records_dir="archive/records"
 
 mv -f ${file} archive/ppns
 mv -f ${file_unix} archive/ppns
-mv -f records-"${file}".csv archive/records
+mv -f records-"${file}".tsv archive/records
 
 rm records.xml
