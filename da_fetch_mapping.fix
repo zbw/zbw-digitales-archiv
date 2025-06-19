@@ -133,14 +133,15 @@ end
 # if LDR 07 = m then map from 810/830 $x
 # elsif 773 $7 = |||s then map from 773[08]x
 # Multiple ISSN are separated from each other with "|"
-if marc_any_match('LDR/7','m')
+do marc_each()
   if marc_has('810')
     marc_map('810x','relation\.issn', join:'|')
   elsif marc_has('830')
-    marc_map('810x','relation\.issn', join:'|')
+    marc_map('830x','relation\.issn', join:'|')
   end
-elsif marc_match('7737|||s','s')
-  marc_map('773[08]x','relation\.issn', join:'|')
+  if marc_match('7737|||s','s')
+    marc_map('773[08]x','relation\.issn', join:'|')
+  end
 end
 
 # ISBN
@@ -296,13 +297,19 @@ if all_match('target','owc-de-206')
   end
 end
 
-# Book PPN (Book Parts)
+# Book PPN (Book Parts, Target ebook)
 if all_match('target','ebooks')
 if all_match('type','bp')
     marc_map('773w','relation\.bookppn')
 	replace_all('relation\.bookppn','^\([^\)]+\)(.*)$','$1')
 	prepend('relation\.bookppn','EBP')
   end
+end
+
+# Book PPN (Book Parts, Target KXP)
+if all_match('type','bp')
+    marc_map('773w','relation\.bookppn')
+	replace_all('relation\.bookppn','^\([^\)]+\)(.*)$','$1')
 end
 
 # 773 JOURNAL cases
@@ -626,6 +633,14 @@ elsif all_match('isil','zdb-199-wto')
   replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
   # set_field('identifier\.packageid','')
 set_field('collection_handle','11159/703031')
+elsif all_match('isil','zdb-1-hbe-article')
+  # If ISIL = zdb-1-hbe-article
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
+  # set_field('identifier\.packageid','')
+ set_field('relation\.ispartofseries','Handbooks in economics')
+set_field('collection_handle','11159/13103')
 #elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
@@ -725,6 +740,13 @@ if all_match('isil','zbw-1-dgl')
       append('filepath','.pdf') 
     end
   end
+end
+
+# Extract Elsevier Handbook-Kapitel PPN from 001 and use for value in "filepath"
+if all_match('isil','zdb-1-hbe-article')
+        marc_map('001','filepath')
+        prepend('filepath','//zbw/metadaten/Work/ZDB-1-HBE/upload/')
+        append('filepath','.pdf') 
 end
 
 # DDC and keywords were to be included in the schema, but subsequently it was decided,
