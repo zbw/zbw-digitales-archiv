@@ -559,6 +559,20 @@ do marc_each()
   end
 end
 
+# Everything with 8600 DA:rau
+do marc_each()
+  if marc_any_match('980h','DA:rau')
+    set_field('collection_handle','11159/703149')
+  end
+end
+
+# Everything with 8600 DA:rcc
+do marc_each()
+  if marc_any_match('980h','DA:rcc')
+    set_field('collection_handle','11159/703151')
+  end
+end
+
 # License statement from 540 is written into column "rights.license"
 do marc_each()
     marc_map('540u','rights\.license')
