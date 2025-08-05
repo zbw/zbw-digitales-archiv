@@ -112,12 +112,21 @@ fi
 
 echo -e "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
-catmandu convert MARC --type XML to CSV --fix da_fetch_mapping.fix --fields identifier.ppn,type,date.issued,title,part,\
-title.alternative,identifier.isbn,relation.issn,relation.journalzdbid,relation.serieszdbid,contributor.author,contributor.editor,contributor.other,identifier,\
-identifier.pi,rights.license,publisher,language.iso,subject.jel,description.version,relation.ispartofseries,relation.seriesppn,\
-relation.ispartofjournal,relation.journalppn,relation.ispartofbook,relation.bookppn,econstor.citation.volume,econstor.citation.issue,econstor.citation.articlenumber,\
-econstor.citation.startpage,econstor.citation.endpage,url,url_pdf,collection_handle,identifier.packageid,filepath,description.abstract,subject.ddc,subject.keyword,download_method,\
-download_browser,downloadelement_xpath,downloadelement_cssselect  --var target="${target}" --var isil="${isil}" --sep_char '\t' < records.xml > records-"${file}".tsv
+catmandu convert MARC --type XML to CSV \
+  --fix da_fetch_mapping.fix \
+  --fields identifier.ppn,identifier.econbizid,type,date.issued,title,title.alternative,part,\
+contributor.author,contributor.editor,contributor.other,identifier,identifier.pi,identifier.isbn,\
+identifier.zbwid,identifier.packageid,collection_handle,url,url_pdf,filepath,download_method,\
+download_browser,downloadelement_xpath,downloadelement_cssselect,rights.license,publisher,\
+language.iso,description.version,relation.ispartofjournal,relation.issn,relation.journalzdbid,\
+relation.journalppn,relation.ispartofbook,relation.bookppn,relation.ispartofseries,\
+relation.serieszdbid,relation.seriesppn,econstor.citation.volume,econstor.citation.issue,\
+econstor.citation.articlenumber,econstor.citation.startpage,econstor.citation.endpage,\
+description.abstract,subject.ddc,subject.keyword,subject.jel \
+  --var target="${target}" \
+  --var isil="${isil}" \
+  --sep_char '\t' \
+  < records.xml > records-"${file}".tsv
 
 if [[ -s records-${file}.tsv ]]
 then
