@@ -6,8 +6,8 @@
 add_field('target','{{target}}')
 add_field('isil','{{isil}}')
 
-# Add download method and default to selen
-add_field('download_method','selen')
+# Add download method with empty value
+add_field('download_method','')
 
 # Add some empty columns to the default TSV
 add_field('download_browser','')
