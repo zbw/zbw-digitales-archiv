@@ -667,6 +667,13 @@ elsif all_match('isil','zdb-1-hbe-article')
   # set_field('identifier\.packageid','')
  set_field('relation\.ispartofseries','Handbooks in economics')
 set_field('collection_handle','11159/13103')
+elsif all_match('isil','zdb-13-soc')
+  # If ISIL = zdb-13-soc
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
+  # set_field('identifier\.packageid','')
+set_field('collection_handle','handle')
 #elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
