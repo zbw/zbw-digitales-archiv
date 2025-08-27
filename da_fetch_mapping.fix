@@ -638,6 +638,14 @@ elsif all_match('isil','zbw-1-dgl')
   # If ISIL = zbw-1-dgl
   set_field('identifier\.packageid','ZBW-1-DGL')
   set_field('collection_handle','11159/654929')
+elsif all_match('isil','zdb-23-dbv')
+  # If ISIL = zdb-23-dbv
+  # marc_map('912ab','identifier\.packageid.$append')
+  # join_field('identifier\.packageid', ' ')
+  set_field('identifier\.packageid','ZDB-23-DBV')
+  # replace_all('identifier\.packageid','(?<=ZDB-23-DBV)(\d{4}(?:-\d{4})?)','$1 ($2)')
+  # replace_all('identifier\.packageid', '\((\d{4})\)', '($1)')
+  set_field('collection_handle','11159/654929')
 elsif all_match('isil','zdb-78-unw')
   # If ISIL = zdb-78-unw
   marc_map('912ab','identifier\.packageid.$append')
@@ -770,6 +778,18 @@ if all_match('isil','zbw-1-dgl')
       marc_replace_all('024[7]a', '\/', '_')
       marc_map('024[7]a','filepath')
       prepend('filepath','//zbw/metadaten/Work/ZBW-1-DGL/upload/')
+      append('filepath','.pdf') 
+    end
+  end
+end
+
+# Extract De Gruyter (Standardpaket ab 2025) DOI from 024a and use for value in "filepath"
+if all_match('isil','zdb-23-dbv')
+  do marc_each()
+    if marc_match('024[7]2','doi')
+      marc_replace_all('024[7]a', '\/', '_')
+      marc_map('024[7]a','filepath')
+      prepend('filepath','//zbw/metadaten/Work/ZDB-1-DBV/upload/')
       append('filepath','.pdf') 
     end
   end
