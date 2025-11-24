@@ -114,7 +114,7 @@ echo -e "Bitte warten. Heruntergeladene Datensätze werden konvertiert."
 
 catmandu convert MARC --type XML to CSV \
   --fix da_fetch_mapping.fix \
-  --fields biblvl,identifier.ppn,identifier.econbizid,type,date.issued,title,title.alternative,part,\
+  --fields identifier.ppn,identifier.econbizid,type,date.issued,title,title.alternative,part,\
 contributor.author,contributor.editor,contributor.other,identifier,identifier.pi,identifier.isbn,\
 identifier.zbwid,identifier.packageid,collection_handle,url,url_pdf,filepath,download_method,\
 download_browser,downloadelement_xpath,downloadelement_cssselect,rights.license,publisher,\
