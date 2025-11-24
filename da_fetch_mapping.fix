@@ -46,16 +46,21 @@ elsif all_match('target','nl-zeitschriften')
   prepend('identifier\.ppn','NLZ')
 end
 
+# Map Leader pos. 7 to biblvl variable
+marc_spec('LDR/7','biblvl')
+
 # Type "Article" (article from journal)
 # 002@ Pos.2 = "s"
 do marc_each()
-  if marc_match('7737|||s','s')
-    set_field('type','b')
-  # No 773 $7 for target nl-zeitschriften
-  # Check on LDR/07 bibliographic level
-  elsif all_match('target','nl-zeitschriften')
-    if marc_match('LDR/7','b')
+  if all_match('biblvl','a')
+    if marc_any_match('7737|||s','s')
       set_field('type','b')
+    # No 773 $7 for target nl-zeitschriften
+    # Check on LDR/07 bibliographic level
+    elsif all_match('target','nl-zeitschriften')
+      if all_match('biblvl','b')
+        set_field('type','b')
+      end
     end
   end
 end
@@ -68,11 +73,11 @@ do marc_each()
   # No 773 $7 for target ebooks and nl-monographien
   # Check on LDR/07 bibliographic level
   elsif all_match('target','ebooks')
-    if marc_match('LDR/7','a')
+    if all_match('biblvl','a')
       set_field('type','bp')
     end
   elsif all_match('target','nl-monographien')
-    if marc_match('LDR/7','a')
+    if all_match('biblvl','a')
       set_field('type','bp')
     end
   end
@@ -82,7 +87,7 @@ end
 # 002@ Pos.2 = "a||f||F" if 013D $8 not one of
 # [Konferenzschrift || Bericht || Forschungsbericht || Hochschulschrift]
 do marc_each()
-  if marc_match('LDR/7','m')
+  if all_match('biblvl','m')
     unless marc_any_match('655[,7]a','Konferenzschrift')
       set_field('type','m')
 	end
@@ -101,8 +106,10 @@ end
 # Type "Periodical Part"
 # 002@ Pos.2 = "v"
 do marc_each()
-  if marc_match('7737|||s','nnas')
-    set_field('type','c')
+  if all_match('biblvl','m')
+    if marc_any_match('7737|||s','s')
+      set_field('type','c')
+    end
   end
 end
 
@@ -691,6 +698,12 @@ elsif all_match('isil','zdb-2')
 elsif all_match('isil','zdb-1-peo')
   # If ISIL = zdb-1-peo
   set_field('collection_handle','11159/709382')
+elsif all_match('isil','zdb-1-cep')
+  # If ISIL = zdb-1-cep
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
+  set_field('collection_handle','11159/1105860')
+# set_field('identifier\.packageid','')
 #elsif all_match('isil','???')
   # PLACEHOLDER
   # If ISIL = 
