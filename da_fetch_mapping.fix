@@ -727,10 +727,12 @@ join_field('url_pdf','|')
 # URL to XPath mapping
 # If a URL matches a given pattern, set a number of download fields in the TSV
 # 2025-12-03: Add platform bankofengland.co.uk/prudential-regulation/publication.*
-if any_match('url','https?://(www\.)?bankofengland\.co\.uk/prudential-regulation/publication.*')
-  set_field('download_method','selen')
-  set_field('download_browser','chrome')
-  set_field('downloadelement_xpath','/html/body/div/main/section[4]/div/div[1]/form/div/button')
+if all_equal('isil','')
+  if any_match('url','https?://(www\.)?bankofengland\.co\.uk/prudential-regulation/publication.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+    set_field('downloadelement_xpath','/html/body/div/main/section[4]/div/div[1]/form/div/button')
+  end
 end
 
 # Extract DOI from 856, transform and write into "identifier.pi"
