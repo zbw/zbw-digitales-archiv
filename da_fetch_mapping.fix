@@ -711,7 +711,10 @@ elsif all_match('isil','zdb-1-cep')
 end
 
 # URL
-marc_map('856[4,0]u','url',join: '|')
+do marc_each()
+  marc_map('856[4,0]u','url.$append')
+end
+join_field('url','|')
 
 # URL PDF
 do marc_each()
@@ -720,6 +723,15 @@ do marc_each()
   end
 end
 join_field('url_pdf','|')
+
+# URL to XPath mapping
+# If a URL matches a given pattern, set a number of download fields in the TSV
+# 2025-12-03: Add platform bankofengland.co.uk/prudential-regulation/publication.*
+if any_match('url','https?://(www\.)?bankofengland\.co\.uk/prudential-regulation/publication.*')
+  set_field('download_method','selen')
+  set_field('download_browser','chrome')
+  set_field('downloadelement_xpath','/html/body/div/main/section[4]/div/div[1]/form/div/button')
+end
 
 # Extract DOI from 856, transform and write into "identifier.pi"
 do marc_each()
