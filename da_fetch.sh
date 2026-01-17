@@ -105,6 +105,13 @@ echo -e "Bitte warten. Datensätze werden heruntergeladen."
 if [[ -s records.xml ]]
 then
   echo -e "Download erfolgreich.";
+  # catmandu erstellt csv datei mit feldern
+  # l: List (001, 773) <- einlesen der csv
+  # for (001,773) in l:
+  #     xmlÜberordnung <- callApi 773
+  #     catmandu extrahiert Feld 980, falls vorhanden
+  #     if 980 existiert:
+  #        füge information 980 für 001 in records.xml ein
 else
   echo -e "Download fehlgeschlagen, Programm bricht ab.";
   exit 1
