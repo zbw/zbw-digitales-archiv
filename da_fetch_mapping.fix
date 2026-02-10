@@ -1,6 +1,6 @@
 # Conversion rules for CBS2DigitalesArchiv
-# @author: Felix Hemme, Luisa Kramer
-# @version: 2022-09-05 v3.0.2
+# @authors: Felix Hemme, Luisa Kramer, Hanna Käfer
+# @version: 2026-02-10
 
 # Accept variable
 add_field('target','{{target}}')
@@ -423,160 +423,22 @@ join_field('relation\.serieszdbid','|')
 remove_field(tmp)
 
 
-# Map callnumbers to Lax record PPNs
+# Store into ZBW RAS regardless of Abrufzeichen or ZSM NC call numbers (added 2026-02-10)
 do marc_each()
-  if marc_any_match('980d','ZSM 1')
-    set_field('collection_handle','11159/536')
+  if marc_any_match('980d','ZSM.*')
+    set_field('collection_handle','11159/17')
   end
 end
 do marc_each()
-  if marc_any_match('980d','ZSM 3')
-    set_field('collection_handle','11159/2270')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 4')
-    set_field('collection_handle','11159/2926')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 6')
-    set_field('collection_handle','11159/4684')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 7')
-    set_field('collection_handle','11159/4739')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 8')
-    set_field('collection_handle','11159/2551')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 9')
-    set_field('collection_handle','11159/3309')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 10')
-    set_field('collection_handle','11159/2308')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 11')
-    set_field('collection_handle','11159/1678')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 12')
-    set_field('collection_handle','11159/1103')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 13')
-    set_field('collection_handle','11159/1663')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 14')
-    set_field('collection_handle','11159/2275')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 15')
-    set_field('collection_handle','11159/1045')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 16')
-    set_field('collection_handle','11159/1047')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 17')
-    set_field('collection_handle','11159/2290')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 18')
-    set_field('collection_handle','11159/141')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 19')
-    set_field('collection_handle','11159/3440')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 20')
-    set_field('collection_handle','11159/2890')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 21')
-    set_field('collection_handle','11159/2918')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 22')
-    set_field('collection_handle','11159/5383')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 23')
-    set_field('collection_handle','11159/12240')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 24')
-    set_field('collection_handle','11159/654471')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 25')
-    set_field('collection_handle','11159/701917')
-  end
-end
-do marc_each()
-  if marc_any_match('980d','ZSM 26')
-    set_field('collection_handle','11159/703030')
-  end
-end
-
-# Everything with 8600 DA:oas
-do marc_each()
-  if marc_any_match('980h','DA:oas')
-    set_field('collection_handle','11159/18')
-  end
-end
-
-# Everything with 8600 DA:ras
-do marc_each()
-  if marc_any_match('980h','DA:ras')
+  if marc_any_match('980h','DA:[or][ac][csu]')
     set_field('collection_handle','11159/17')
   end
 end
 
-# Everything with 8600 DA:cas
+# Store into "ZBW - Lizenzierte E-Medien / ZBW Licensed Content" if Abrufzeichen = DA:cas
 do marc_each()
   if marc_any_match('980h','DA:cas')
     set_field('collection_handle','11159/9034')
-  end
-end
-
-# Everything with 8600 DA:rau
-do marc_each()
-  if marc_any_match('980h','DA:rau')
-    set_field('collection_handle','11159/703149')
-  end
-end
-
-# Everything with 8600 DA:rcc
-do marc_each()
-  if marc_any_match('980h','DA:rcc')
-    set_field('collection_handle','11159/703151')
   end
 end
 
@@ -692,11 +554,11 @@ elsif all_match('isil','zdb-2')
   # If ISIL = zdb-2
   marc_map('912ab','identifier\.packageid.$append')
   join_field('identifier\.packageid','|')
-  replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
-  # set_field('identifier\.packageid','')
   set_field('collection_handle','11159/1105247')
 elsif all_match('isil','zdb-1-peo')
   # If ISIL = zdb-1-peo
+  marc_map('912ab','identifier\.packageid.$append')
+  join_field('identifier\.packageid','|')
   set_field('collection_handle','11159/709382')
 elsif all_match('isil','zdb-1-cep')
   # If ISIL = zdb-1-cep
