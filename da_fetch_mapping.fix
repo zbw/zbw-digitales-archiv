@@ -317,7 +317,7 @@ if all_match('target','owc-de-206')
 end
 
 # Book PPN (Book Parts, Target ebook)
-if all_match('target','ebooks')
+if all_match('target','ebook')
 if all_match('type','bp')
     marc_map('773w','relation\.bookppn')
 	replace_all('relation\.bookppn','^\([^\)]+\)(.*)$','$1')
@@ -697,6 +697,13 @@ end
 if all_match('isil','zdb-1-hbe-article')
         marc_map('001','filepath')
         prepend('filepath','//zbw/metadaten/Work/ZDB-1-HBE/upload/')
+        append('filepath','.pdf') 
+end
+
+# Extract UNWTO ISBN from 020a and use for value in "filepath"
+if all_match('isil','zdb-78-unw')
+        marc_map('020a','filepath')
+        prepend('filepath','//zbw/metadaten/Work/ZDB-78-UNW/upload/')
         append('filepath','.pdf') 
 end
 
