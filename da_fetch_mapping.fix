@@ -552,7 +552,7 @@ elsif all_match('isil','zdb-13-soc')
   set_field('collection_handle','11159/709383')
 elsif all_match('isil','zdb-2-')
   # If ISIL = zdb-2-
-  marc_map('912ab','identifier\.packageid.$append')
+  marc_map('912[ , ]ab','identifier\.packageid.$append')
   join_field('identifier\.packageid','|')
   replace_all('identifier\.packageid','(ZDB-[\d]{1,4}-[A-Za-z]{1,})([\d]{4})','$1 \($2\)')
   # set_field('identifier\.packageid','')
