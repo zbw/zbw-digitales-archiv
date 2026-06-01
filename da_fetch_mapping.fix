@@ -664,6 +664,7 @@ if all_match('isil','zdb-23-gbe')
   end
 end
 
+
 # Extract De Gruyter (Individualpaket bis 2023) DOI from 024a and use for value in "filepath"
 if all_match('isil','zbw-1-dgw')
   do marc_each()
@@ -688,16 +689,21 @@ if all_match('isil','zbw-1-dgl')
   end
 end
 
-# Extract De Gruyter (Standardpaket ab 2025) DOI from 024a and use for value in "filepath"
+# seit mitte 2025 ist DOI nicht mehr flächendeckend in PICA 024a zu finden; deswegen (temporärer) Wechsel zu ISBN. Extract De Gruyter (Standardpaket ab 2025) DOI from 024a and use for value in "filepath"
+  #do marc_each()
+    #if marc_match('024[7]2','doi')
+      #marc_replace_all('024[7]a', '\/', '_')
+      #marc_map('024[7]a','filepath')
+      #prepend('filepath','//zbw/metadaten/Work/ZDB-23-DBV/upload/')
+      #append('filepath','.pdf') 
+    #end
+  #end
+#end
+#Extract De Gruyter (Standardpaket ab 2025) ISBN from 020a and use for value in "filepath"
 if all_match('isil','zdb-23-dbv')
-  do marc_each()
-    if marc_match('024[7]2','doi')
-      marc_replace_all('024[7]a', '\/', '_')
-      marc_map('024[7]a','filepath')
-      prepend('filepath','//zbw/metadaten/Work/ZDB-23-DBV/upload/')
-      append('filepath','.pdf') 
-    end
-  end
+	marc_map('020a','filepath')
+	prepend('filepath','//zbw/metadaten/Work/ZDB-23-DBV/upload/10.1515_')
+	append('filepath','.pdf') 
 end
 
 # Extract Elsevier Handbook-Kapitel PPN from 001 and use for value in "filepath"
