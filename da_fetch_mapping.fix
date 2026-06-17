@@ -593,14 +593,47 @@ do marc_each()
 end
 join_field('url_pdf','|')
 
-# URL to XPath mapping
-# If a URL matches a given pattern, set a number of download fields in the TSV
-# 2025-12-03: Add platform bankofengland.co.uk/prudential-regulation/publication.*
-if all_equal('isil','')
+# URL to Selenium mapping
+# If a URL matches a given pattern, set a number of download fields in the TSV (added 2025-12-03)
+# This list is being updated continuously
+do each()
   if any_match('url','https?://(www\.)?bankofengland\.co\.uk/prudential-regulation/publication.*')
     set_field('download_method','selen')
     set_field('download_browser','chrome')
     set_field('downloadelement_xpath','/html/body/div/main/section[4]/div/div[1]/form/div/button')
+  elsif any_match('url','https?://(www\.)?ieeexplore\.ieee\.org.*')
+    set_field('download_method','selen')
+    set_field('download_browser','firefox')
+  elsif any_match('url','https?://(www\.)?portalrevistas\.ucb\.br.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?revistasum\.umanizales\.edu\.co.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?igi-global\.com.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?mmi\.sumdu\.edu\.ua.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?risk\.net.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?bristoluniversitypressdigital\.com.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chromium')
+  elsif any_match('url','https?://(www\.)?dsec\.gov\.mo/en-US/Home/Publication/SIED.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?reports\.weforum\.org.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?econtent\.hogrefe\.com.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?inderscienceonline\.com.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
   end
 end
 
