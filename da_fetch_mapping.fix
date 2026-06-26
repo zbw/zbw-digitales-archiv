@@ -507,11 +507,11 @@ elsif all_match('isil','zbw-1-dgl')
   # If ISIL = zbw-1-dgl
   set_field('identifier\.packageid','ZBW-1-DGL')
   set_field('collection_handle','11159/654929')
-elsif all_match('isil','zdb-23-dbv')
-  # If ISIL = zdb-23-dbv
+elsif all_match('isil','zdb-23-65')
+  # If ISIL = zdb-23-65
   marc_map('912ab','identifier\.packageid.$append')
   join_field('identifier\.packageid', '|')
-  replace_all('identifier\.packageid','(ZDB-23-[A-Za-z]+)(\d{4}(?:-\d{4})?)','$1 ($2)')
+  replace_all('identifier\.packageid','(ZDB-23-\d{2})(\d{4}(?:-\d{4})?)','$1 ($2)')
   replace_all('identifier\.packageid', '\((\d{4})\)', '($1)')
   set_field('collection_handle','11159/654929')
 elsif all_match('isil','zdb-78-unw')
@@ -733,9 +733,9 @@ end
   #end
 #end
 #Extract De Gruyter (Standardpaket ab 2025) ISBN from 020a and use for value in "filepath"
-if all_match('isil','zdb-23-dbv')
+if all_match('isil','zdb-23-65')
 	marc_map('020a','filepath')
-	prepend('filepath','//zbw/metadaten/Work/ZDB-23-DBV/upload/10.1515_')
+	prepend('filepath','//zbw/metadaten/Work/ZDB-23-65/upload/10.1515_')
 	append('filepath','.pdf') 
 end
 
