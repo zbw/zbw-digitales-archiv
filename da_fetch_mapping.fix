@@ -422,6 +422,13 @@ join_field('relation\.seriesppn','|')
 join_field('relation\.serieszdbid','|')
 remove_field(tmp)
 
+# Map virtual callnumber
+do marc_each()
+  if marc_has('980d')
+    marc_map('980d','callnumber.$append')
+  end
+end
+join_field('callnumber','|')
 
 # Store into ZBW RAS regardless of Abrufzeichen or ZSM NC call numbers (added 2026-02-10)
 do marc_each()
