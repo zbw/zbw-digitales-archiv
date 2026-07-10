@@ -641,6 +641,15 @@ do each()
   elsif any_match('url','https?://(www\.)?inderscienceonline\.com.*')
     set_field('download_method','selen')
     set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?shs\.hal\.science.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?opus4\.kobv\.de.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?repository\.unescap\.org.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
   end
 end
 
