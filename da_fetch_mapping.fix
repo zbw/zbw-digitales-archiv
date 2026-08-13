@@ -671,6 +671,9 @@ do each()
   elsif any_match('url','https?://(www\.)?journals\.openedition\.org.*')
     set_field('download_method','selen')
     set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?nso\.gov\.mt.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
   end
 end
 
