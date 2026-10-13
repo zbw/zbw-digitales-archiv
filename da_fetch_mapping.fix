@@ -749,6 +749,12 @@ do each()
   elsif any_match('url','https?://(www2?\.)?econ\.osaka-u\.ac\.jp.*')
     set_field('download_method','selen')
     set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?tohoku\.repo\.nii\.ac\.jp.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
+  elsif any_match('url','https?://(www\.)?kansascityfed\.org.*')
+    set_field('download_method','selen')
+    set_field('download_browser','chrome')
   end
 end
 
