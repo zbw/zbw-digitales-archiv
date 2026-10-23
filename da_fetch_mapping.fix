@@ -452,9 +452,9 @@ end
 # Store into "Oxford University Press Handbooks Business and Management, Economics
 # and Finance Collection" if Abrufzeichen = OLM-OEF-UW or OLM-OHB-UW
 do marc_each()
-  if marc_any_match('995a','OLM-OEF-UW')
+  if marc_any_match('980h','OLM-OEF-UW')
     set_field('collection_handle','11159/1560778')
-  elsif marc_any_match('995a','OLM-OHB-UW')
+  elsif marc_any_match('980h','OLM-OHB-UW')
     set_field('collection_handle','11159/1560778')
   end
 end
